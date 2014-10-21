@@ -30,6 +30,11 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
