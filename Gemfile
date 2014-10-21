@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,35 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
+
+group :development do
+  gem 'sqlite3'
+  gem 'quiet_assets'
+  gem "better_errors"
+  gem "binding_of_caller" #if you use better_errors
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
+
+
+gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'faker'
+gem 'devise'
+gem 'figaro'
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'pundit'
+gem 'haml-rails'
+#gem 'redcarpet' # to parse Markdown syntax
 # Use unicorn as the app server
 # gem 'unicorn'
 
