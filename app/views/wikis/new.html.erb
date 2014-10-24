@@ -2,11 +2,29 @@
 <!--<script src="epiceditor.min.js"></script>-->
 
 <%= form_for Wiki.new do |w| %>
-    <%= w.label :name %>
-    <%= w.text_field :name %>
-    <%= w.text_area :body %>
+    <div class="form-group">
+      <%= w.label :name %>
+      <%= w.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= w.text_area :body %>
+    </div>
+
     <%= w.submit %>
 <% end %>
+
+<form>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
 
 <!--<div id="epiceditor">-->
   <!--<textarea id="new-wiki"></textarea># name="new-wiki" cols="30" rows="100"></textarea>-->
