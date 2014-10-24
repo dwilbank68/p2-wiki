@@ -1,11 +1,25 @@
 @import "bootstrap";
+@import 'base/epiceditor';
+@import 'preview/bartik';
+@import 'preview/github';
+@import 'preview/preview-dark';
+@import 'editor/epic-dark';
+@import 'editor/epic-light';
 
+.container {
+  background: rgb(229,229,229);
+  background: -moz-linear-gradient(left, rgba(229,229,229,1) 0%, rgba(153,153,153,1) 51%, rgba(206,206,206,1) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,229,229,1)), color-stop(51%,rgba(153,153,153,1)), color-stop(100%,rgba(206,206,206,1)));
+  background: -webkit-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
+  background: -o-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
+  background: -ms-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
+  background: linear-gradient(to right, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
+
+}
 .user-info { margin-top: 9px; }
 .nav { margin-top: 5px; }
 
-#signup-box {
-  border: solid 3px black;
-}
+
 
 .box {
   border: solid 1px #AAA;
@@ -13,6 +27,27 @@
   line-height: 250%;
 }
 
+.wiki-frame {
+  height: 600px;
+  overflow: auto;
+}
+
+// Signup Page
+
+#signup-box {
+  border: solid 3px black;
+}
+
 #plans .glyphicon {
   font-size: 2.5em;
+}
+
+// New Wiki Page
+
+textarea {
+  clear:both;
+}
+
+#epiceditor {
+  height: 500px;
 }

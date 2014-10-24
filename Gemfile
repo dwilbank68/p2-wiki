@@ -62,7 +62,8 @@ gem 'figaro'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'pundit'
 gem 'haml-rails'
-#gem 'redcarpet' # to parse Markdown syntax
+gem 'redcarpet' # to parse Markdown syntax
+gem 'epic-editor-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

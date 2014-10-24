@@ -62,6 +62,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    epic-editor-rails (0.2.3)
+      railties (>= 3.2, < 5.0)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -132,6 +134,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.2.0)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
@@ -199,6 +202,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  epic-editor-rails
   factory_girl_rails (~> 4.0)
   faker
   figaro
@@ -211,6 +215,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.0)
   rails_12factor
+  redcarpet
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

@@ -1,0 +1,18 @@
+<h1>New Wiki</h1>
+<!--<script src="epiceditor.min.js"></script>-->
+
+<%= form_for Wiki.new do |w| %>
+    <%= w.label :name %>
+    <%= w.text_field :name %>
+    <%= w.text_area :body %>
+    <%= w.submit %>
+<% end %>
+
+<!--<div id="epiceditor">-->
+  <!--<textarea id="new-wiki"></textarea># name="new-wiki" cols="30" rows="100"></textarea>-->
+<!--</div>-->
+
+
+<%= javascript_tag do %>
+    var editor = new EpicEditor().load();
+<% end %>

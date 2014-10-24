@@ -1,0 +1,12 @@
+<div>
+    <div class="row">
+      <%= @wiki.name %>
+    </div>
+  <div class="row">
+    <%= markdown(@wiki.body) %>
+  </div>
+</div>
+
+    <% if policy(@wiki).destroy? %>
+        <%= link_to "Delete", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'} %>
+    <% end %>
