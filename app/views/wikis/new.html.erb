@@ -1,36 +1,65 @@
 <h1>New Wiki</h1>
-<!--<script src="epiceditor.min.js"></script>-->
 
-<%= form_for Wiki.new do |w| %>
-    <div class="form-group">
+<%= simple_form_for Wiki.new do |w| %>
       <%= w.label :name %>
       <%= w.text_field :name %>
-    </div>
-    <div class="form-group">
-      <%= w.text_area :body %>
-    </div>
-
-    <%= w.submit %>
+      <%= w.input :body, label: false, input_html: { id: 'content-input' }, as: :hidden %>
+      <div id="epiceditor"></div>
+      <%= w.submit %>
 <% end %>
-
-<form>
-  <div class="form-group">
-    <label for="inputEmail">Email</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="inputPassword">Password</label>
-    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
-
-<!--<div id="epiceditor">-->
-  <!--<textarea id="new-wiki"></textarea># name="new-wiki" cols="30" rows="100"></textarea>-->
-<!--</div>-->
-
 
 <%= javascript_tag do %>
+
+    var opts = {
+        container: 'epiceditor',
+        textarea: 'content-input',
+        basePath: 'epiceditor',
+        clientSideStorage: true,
+        localStorageName: 'epiceditor',
+        useNativeFullscreen: true,
+        parser: marked,
+        file: {
+            name: 'epiceditor',
+            defaultContent: '',
+            autoSave: 100
+        },
+        theme: {
+            base: '/themes/base/epiceditor.css',
+            preview: '/themes/preview/preview-dark.css',
+            editor: '/themes/editor/epic-dark.css'
+        },
+        button: {
+            preview: true,
+            fullscreen: true,
+            bar: "auto"
+        },
+        focusOnLoad: false,
+        shortcut: {
+            modifier: 18,
+            fullscreen: 70,
+            preview: 80
+        },
+        string: {
+            togglePreview: 'Toggle Preview Mode',
+            toggleEdit: 'Toggle Edit Mode',
+            toggleFullscreen: 'Enter Fullscreen'
+        },
+        autogrow: false
+    }
+
     var editor = new EpicEditor().load();
+    var the_editor = editor.getElement('editor').body;
+
+    var sync_text = function(){
+        $('#content-input').val(the_editor.textContent) ;
+    };
+
+    sync_text(); // sync the text immediately
+
+    $(the_editor).on("keyup", function(){
+        sync_text();
+    });
+
 <% end %>
+
+
