@@ -65,6 +65,7 @@ gem 'haml-rails'
 gem 'redcarpet' # to parse Markdown syntax
 gem 'epic-editor-rails'
 gem 'simple_form'
+gem 'stripe'
 # Use unicorn as the app server
 # gem 'unicorn'
 

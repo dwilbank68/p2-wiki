@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
     role == 'moderator'
   end
 
+  def subscribed?
+    subscribed
+  end
 
 end
 
