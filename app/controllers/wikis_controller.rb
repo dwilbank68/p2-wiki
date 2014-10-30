@@ -11,7 +11,7 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
   end
 
   def new
@@ -25,5 +25,5 @@ class WikisController < ApplicationController
   def wiki_params
     params.require(:wiki).permit(:name, :body)
   end
-# TODO - add :public field here
+
 end

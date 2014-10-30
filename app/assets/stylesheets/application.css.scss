@@ -26,10 +26,6 @@
   line-height: 250%;
 }
 
-.wiki-frame {
-  height: 600px;
-  overflow: auto;
-}
 
 // Signup Page
 
@@ -43,10 +39,12 @@
 
 // New Wiki Page
 
-textarea {
-  clear:both;
+.text-input {
+  width: 600%;
+  height: 600px;
+  overflow: auto;
 }
 
-#epiceditor {
-  height: 500px;
+#preview {
+  background-color: white;
 }

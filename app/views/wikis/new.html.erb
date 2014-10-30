@@ -1,65 +1,38 @@
 <h1>New Wiki</h1>
 
-<%= simple_form_for Wiki.new do |w| %>
-      <%= w.label :name %>
-      <%= w.text_field :name %>
-      <%= w.input :body, label: false, input_html: { id: 'content-input' }, as: :hidden %>
-      <div id="epiceditor"></div>
-      <%= w.submit %>
-<% end %>
+<div class="row">
+  <div class="col-xs-6">
+    <%= simple_form_for Wiki.new do |w| %>
 
-<%= javascript_tag do %>
+        <div class="input-group"><%= w.text_field :name, placeholder: "name" %></div>
+        <%#= w.input :body, input_html: { id: 'text-input' }, rows:6, cols:60 %>
 
-    var opts = {
-        container: 'epiceditor',
-        textarea: 'content-input',
-        basePath: 'epiceditor',
-        clientSideStorage: true,
-        localStorageName: 'epiceditor',
-        useNativeFullscreen: true,
-        parser: marked,
-        file: {
-            name: 'epiceditor',
-            defaultContent: '',
-            autoSave: 100
-        },
-        theme: {
-            base: '/themes/base/epiceditor.css',
-            preview: '/themes/preview/preview-dark.css',
-            editor: '/themes/editor/epic-dark.css'
-        },
-        button: {
-            preview: true,
-            fullscreen: true,
-            bar: "auto"
-        },
-        focusOnLoad: false,
-        shortcut: {
-            modifier: 18,
-            fullscreen: 70,
-            preview: 80
-        },
-        string: {
-            togglePreview: 'Toggle Preview Mode',
-            toggleEdit: 'Toggle Edit Mode',
-            toggleFullscreen: 'Enter Fullscreen'
-        },
-        autogrow: false
+        <div class="input-group">
+          <textarea id="text-input" name="wiki[body]"  rows="30" cols="80" oninput="this.editor.update()">Type **Markdown** here.</textarea>
+        </div>
+        <%= w.submit %>
+    <% end %>
+  </div>
+  <div class="col-xs-6">
+      <div id="preview" class="col-xs-6"> </div>
+  </div>
+
+</div>
+
+
+
+<script>
+    function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
     }
+    var $ = function (id) { return document.getElementById(id); };
+    new Editor($("text-input"), $("preview"));
+</script>
 
-    var editor = new EpicEditor().load();
-    var the_editor = editor.getElement('editor').body;
 
-    var sync_text = function(){
-        $('#content-input').val(the_editor.textContent) ;
-    };
-
-    sync_text(); // sync the text immediately
-
-    $(the_editor).on("keyup", function(){
-        sync_text();
-    });
-
-<% end %>
 
 
