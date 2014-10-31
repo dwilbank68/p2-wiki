@@ -1,7 +1,8 @@
 class Wiki < ActiveRecord::Base
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history]
+  #friendly_id :name, :use => :history
 
   belongs_to  :user
   has_many    :collaborations
@@ -11,7 +12,9 @@ class Wiki < ActiveRecord::Base
   validates_uniqueness_of :name, :case_sensitive => false
 
   def should_generate_new_friendly_id?
-    new_record?
+    name_changed?
   end
+
+
 
 end

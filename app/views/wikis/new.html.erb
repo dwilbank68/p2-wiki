@@ -8,7 +8,8 @@
         <%#= w.input :body, input_html: { id: 'text-input' }, rows:6, cols:60 %>
 
         <div class="input-group">
-          <textarea id="text-input" name="wiki[body]"  rows="30" cols="80" oninput="this.editor.update()">Type **Markdown** here.</textarea>
+          <textarea id="text-input" name="wiki[body]"  rows="30" cols="80"
+            oninput="this.editor.update()" placeholder=""><%= @markdown_tutorial %></textarea>
         </div>
         <%= w.submit %>
     <% end %>

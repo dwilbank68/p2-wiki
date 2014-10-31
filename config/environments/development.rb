@@ -37,4 +37,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp    # for Actionmailer
   config.action_mailer.perform_deliveries = true  # for ActionMailer
+
+  BetterErrors.editor='rubymine://open?url=file://%{file}&line=%{line}'
 end

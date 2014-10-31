@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
     role == 'admin'          # which is really self.role == 'admin'
   end
 
+
   def moderator?
     role == 'moderator'
   end
