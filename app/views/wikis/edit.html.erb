@@ -1,17 +1,17 @@
-<h1>New Wiki</h1>
+<h1>Edit Wiki</h1>
 
 <div class="row">
   <div class="col-xs-6">
     <%= simple_form_for Wiki.new do |w| %>
 
-        <div class="input-group"><%= w.text_field :name, placeholder: "name" %></div>
+        <div class="input-group"><%= w.text_field :name, placeholder: @wiki.name %></div>
         <%#= w.input :body, input_html: { id: 'text-input' }, rows:6, cols:60 %>
 
         <div class="input-group">
           <textarea id="text-input" name="wiki[body]"  rows="30" cols="80"
-            oninput="this.editor.update()" placeholder=""><%= @filler_text %></textarea>
+            oninput="this.editor.update()" placeholder=""><%= @wiki.body %></textarea>
         </div>
-        <%= w.submit %>
+        <%= w.submit "Update Wiki" %>
     <% end %>
   </div>
   <div class="col-xs-6">

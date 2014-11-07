@@ -1,12 +1,38 @@
-<div>
-    <div class="row">
-      <%= @wiki.name %>
-    </div>
-  <div class="row">
-    <%= markdown(@wiki.body) %>
+<div class="row">
+
+
+  <textarea id="hidden-text" placeholder=""><%= @wiki.body %></textarea>
+
+  <div><%= @wiki.name %></div>
+
+  <div class="col-xs-8 col-xs-offset-2">
+    <div id="preview"> </div>
   </div>
+
 </div>
 
-    <% if policy(@wiki).destroy? %>
-        <%= link_to "Delete", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'} %>
-    <% end %>
+<% if policy(@wiki).destroy? %>
+    <%= link_to "Delete", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'} %>
+<% end %>
+
+<% if policy(@wiki).edit? %>
+    <%= link_to "Edit", edit_wiki_path, class: 'btn btn-warning' %>
+<% end %>
+
+
+
+<script>
+    $(document).ready(function(){
+        function Editor(input, preview) {
+            this.update = function () {
+                preview.innerHTML = markdown.toHTML(input.value);
+            };
+            input.editor = this;
+            this.update();
+        }
+
+        var $ = function (id) { return document.getElementById(id); };
+        new Editor($("hidden-text"), $("preview"));
+
+    });
+</script>

@@ -12,6 +12,7 @@ class WikisController < ApplicationController
   end
 
   def edit
+    @wiki = Wiki.friendly.find(params[:id])
   end
 
   def show
@@ -26,7 +27,7 @@ class WikisController < ApplicationController
   end
 
   def new
-    @markdown_tutorial = "This is just a sample. You can play around with your own text right here.
+    @filler_text = "This is just a sample. You can play around with your own text right here.
 
 Markdown
 -------------
