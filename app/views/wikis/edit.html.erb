@@ -1,21 +1,54 @@
-<h1>Edit Wiki</h1>
-
-<div class="row">
-  <div class="col-xs-6">
-    <%= simple_form_for Wiki.new do |w| %>
-
-        <div class="input-group"><%= w.text_field :name, placeholder: @wiki.name %></div>
-        <%#= w.input :body, input_html: { id: 'text-input' }, rows:6, cols:60 %>
-
-        <div class="input-group">
-          <textarea id="text-input" name="wiki[body]"  rows="30" cols="80"
-            oninput="this.editor.update()" placeholder=""><%= @wiki.body %></textarea>
-        </div>
-        <%= w.submit "Update Wiki" %>
+<div id="icon-bar">
+  <div class="all row-inline">
+    <%= link_to wikis_path do %>
+        <i class="fa fa-navicon fa-3x nav-icons"></i>
     <% end %>
   </div>
+
+  <div class="back row-inline">
+    <%= link_to session[:last_page] do %>
+        <i class="fa fa-angle-left fa-4x nav-icons"></i>
+    <% end %>
+  </div>
+
+  <div class="headlines row-inline">
+    <h1>Edit Wiki</h1>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-xs-6 input-panel">
+    <%= simple_form_for @wiki do |w| %>
+
+        <div class="input-group name-box">
+          <%= w.text_field :name, value: @wiki.name %>
+        </div>
+
+        <div class="input-group">
+          <textarea id="text-input" name="wiki[body]" rows="30" cols="80" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
+        </div>
+
+        <%= w.button :submit, "Update Wiki" %>
+    <% end %>
+  </div>
+
   <div class="col-xs-6">
       <div id="preview" class="col-xs-6"> </div>
+
+
+    <div> # for collaborations
+      <%#= simple_form_for(  ) do |f|%>
+          <%#= f.button :submit, "Edit Collaborators", class:'collab pull-right' %>
+      <%# end %>
+    </div>
+
+    <div>
+      <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
+          <%= f.button :submit, "Delete Wiki", class:'delete pull-right', :confirm => "Delete Wiki?" %>
+      <% end %>
+    </div>
+
   </div>
 
 </div>
@@ -35,3 +68,6 @@
 
     });
 </script>
+
+
+<textarea id="hidden-text" ><%= @wiki.body %></textarea>

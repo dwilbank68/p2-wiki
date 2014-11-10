@@ -7,15 +7,102 @@
 //@import 'editor/epic-dark';
 //@import 'editor/epic-light';
 
-.container {
-  background: rgb(229,229,229);
-  background: -moz-linear-gradient(left, rgba(229,229,229,1) 0%, rgba(153,153,153,1) 51%, rgba(206,206,206,1) 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,229,229,1)), color-stop(51%,rgba(153,153,153,1)), color-stop(100%,rgba(206,206,206,1)));
-  background: -webkit-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
-  background: -o-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
-  background: -ms-linear-gradient(left, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
-  background: linear-gradient(to right, rgba(229,229,229,1) 0%,rgba(153,153,153,1) 51%,rgba(206,206,206,1) 100%);
+body {
+  background:url(https://dl.dropboxusercontent.com/u/2048705/pattern-3037.png);
+  background-repeat: repeat;
+}
 
+.container {
+  background:url(https://dl.dropboxusercontent.com/u/2048705/2.jpg);
+  background-repeat: repeat;
+  -webkit-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
+          box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
+}
+
+#icon-bar {
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.row-inline {
+  display: inline-block;
+}
+.all {
+  margin-left: 10px;
+  margin-right: 8px;
+}
+.back { margin-right: 33px; }
+
+.nav-icons {
+  position:relative;
+  font-size:2.4em;
+  color: #053f00;
+}
+
+.fa-angle-left {
+  font-size: 4.5em;
+  vertical-align: sub;
+}
+
+.headlines {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+.name-box {
+  font-size: 1.5em;
+  font-weight: heavy;
+  bottom-margin: -5px;
+}
+
+input.btn {
+  font-family: 'Oswald', sans-serif;
+  color: #053f00;
+  font-size: 1.25em;
+  margin-left: 5px;
+  margin-bottom: 7px;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: #BBB;
+  background-color: black;
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+}
+
+input.btn:hover, .headlines, .fa-angle-left:hover, .all:hover {
+  color: #0D0;
+  text-shadow:  0px -2px  7px     rgba(30,181,55, 1),
+                0px  2px  7px     rgba(30,181,55, 1),
+               -2px  0px  7px     rgba(30,181,55, 1),
+                2px  0px  7px     rgba(30,181,55, 1);
+}
+
+input.btn.delete {
+  color: #3f0500;
+}
+
+input.btn.delete:hover {
+  color: #D00;
+  text-shadow:  0px -2px  7px     rgba(181,30,55, 1),
+                0px  2px  7px     rgba(181,30,55, 1),
+               -2px  0px  7px     rgba(181,30,55, 1),
+                2px  0px  7px     rgba(181,30,55, 1);
+}
+
+
+#text-input, #wiki_name, #preview, #icon-bar {
+  border-style: ridge;
+  border-width: 5px;
+  border-color: #BBB;
+  margin: 5px;
+  padding-bottom: 1px;
 }
 .user-info { margin-top: 9px; }
 .nav { margin-top: 5px; }
@@ -26,33 +113,38 @@
   line-height: 250%;
 }
 
-
 // Signup Page
 
-#signup-box {
-  border: solid 3px black;
-}
+#signup-box { border: solid 3px black; }
 
-#plans .glyphicon {
-  font-size: 2.5em;
-}
+#plans .glyphicon { font-size: 2.5em; }
 
 // New Wiki Page
 
 .text-input {
-  width: 600%;
+  //width: 600%;
   height: 600px;
   overflow: auto;
 }
 
 #preview {
-  height: 631px;
-  width: 552px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.25em;
+  color: white;
+  height: 605px;
+  //width: 552px;
+  width: 627px;
+  margin-top: 51px;
+  margin-left: -78px;
   overflow: auto;
-  background-color: white;
+  background:url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
 }
 
 // Show Wiki Page
+
+#preview.show {
+  margin: 0px;
+}
 
 #hidden-text {
   display: none;

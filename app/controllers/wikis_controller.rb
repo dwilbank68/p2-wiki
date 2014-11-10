@@ -1,9 +1,9 @@
 class WikisController < ApplicationController
 
-  # before_filter :find_wiki
+  before_action :find_wiki, only: [:edit, :show, :update, :destroy]
 
   def index
-    @wikis = current_user.wikis
+    @wikis = Wiki.includes(:user).all
   end
 
   def create
@@ -12,18 +12,25 @@ class WikisController < ApplicationController
   end
 
   def edit
-    @wiki = Wiki.friendly.find(params[:id])
+    authorize @wiki
+    session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
   end
 
   def show
-    @wiki = Wiki.friendly.find(params[:id])
     if request.path != wiki_path(@wiki)
       return redirect_to @wiki, :status => :moved_permanently
     end
+    session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
   end
 
   def update
-
+    authorize @wiki
+    if @wiki.update!(wiki_params)
+      redirect_to @wiki
+    else
+      flash[:error] = "Error saving updating wiki. Please try again"
+      render :edit
+    end
   end
 
   def new
@@ -44,16 +51,18 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
   end
 
   def destroy
-    @wiki = Wiki.friendly.find(params[:id])
+    authorize @wiki
     @wiki.destroy
     redirect_to wikis_path
   end
-  ###########################################################################
+
+  ##############################
+
   private
 
-  # def find_wiki
-  #   @wiki = Wiki.friendly.find(params[:id])
-  # end
+  def find_wiki
+    @wiki = Wiki.friendly.find(params[:id])
+  end
 
   def wiki_params
     params.require(:wiki).permit(:name, :body)

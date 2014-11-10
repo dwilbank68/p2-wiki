@@ -1,5 +1,6 @@
-<%= @profile.name %>
-<%= @profile.email %>
-<%= @profile.subscribed %>
-
-<%= link_to "My Wikis", wikis_path %>
+<h3><%= @profile.name %></h3>
+<p><%= @profile.email %></p>
+<p><%= @profile.subscribed %></p>
+<ul>
+  <%= render @my_wikis %>
+</ul>

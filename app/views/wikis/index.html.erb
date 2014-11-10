@@ -1,4 +1,4 @@
-<h1>My Wikis</h1>
+<h1>All Wikis</h1>
 
 <div class="row">
   <%= link_to 'New Wiki', new_wiki_path %>
@@ -6,10 +6,10 @@
 
 <div class="wiki-frame col-xs-4 col-xs-offset-4">
   <ul>
-    <% @wikis.each do |wiki| %>
-        <li class="list-group-item">
-            <%= link_to wiki.name, wiki %>
-        </li>
-    <% end %>
+    <%= render @wikis %>
   </ul>
+</div>
+
+<div class="row">
+  <%= link_to 'New Wiki', new_wiki_path %>
 </div>

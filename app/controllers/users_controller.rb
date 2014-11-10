@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @profile = current_user
+    @my_wikis = Wiki.where user_id:current_user.id
   end
 
   def update
