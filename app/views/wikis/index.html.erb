@@ -4,12 +4,10 @@
   <%= link_to 'New Wiki', new_wiki_path %>
 </div>
 
-<div class="wiki-frame col-xs-4 col-xs-offset-4">
-  <ul>
-    <%= render @wikis %>
-  </ul>
-</div>
-
-<div class="row">
-  <%= link_to 'New Wiki', new_wiki_path %>
+<div class="col-xs-6 col-xs-offset-3">
+  <div id="wiki-frame">
+    <ul>
+      <%= render @wikis %>
+    </ul>
+  </div>
 </div>

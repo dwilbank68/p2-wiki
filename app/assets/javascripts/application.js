@@ -14,7 +14,6 @@
 //= require jquery_ujs
 
 //= require bootstrap
-//= require 'epiceditor'
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
 
