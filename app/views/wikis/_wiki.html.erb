@@ -4,7 +4,11 @@
       <td class="wiki-name"  ><%= link_to wiki.name, wiki %></td>
       <td class="wiki-owner" ><%= wiki.user.name %></td>
       <td class="wiki-edit"  >
-        <%= link_to edit_wiki_path(wiki) do %>
+        <% if policy(wiki).edit? %>
+            <%= link_to edit_wiki_path(wiki) do %>
+                <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+        <% else %>
             <i class="fa fa-pencil-square-o"></i>
         <% end %>
       </td>

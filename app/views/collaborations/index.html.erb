@@ -1,0 +1,25 @@
+<h1>Collaborations</h1>
+
+<%= form_tag wiki_collaborations_path do %>
+    <table>
+
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Add To Edit Group</th>
+      </tr>
+
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= check_box_tag "user_ids[]", user.id %></td>
+          </tr>
+      <% end %>
+
+    </table>
+
+
+    <%= submit_tag "Update" %>
+
+<% end %>
