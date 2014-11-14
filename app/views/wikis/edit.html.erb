@@ -35,7 +35,7 @@
 
     <div class="row #button-row"> <!-- row 4 - buttons -->
         <div class="col-xs-1">
-            <%= w.button :submit, "Update Wiki" %>
+            <%= w.button :submit, "Update Wiki", id:"edit" %>
             <%# end %>
         </div>
 <% end %> <!--end simple_form for edit @wiki-->
@@ -43,7 +43,7 @@
         <% if policy(@wiki).destroy? %>
             <div class="col-xs-1 col-xs-offset-10">
               <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
-                  <%= f.button :submit, "Delete Wiki", class:'delete pull-right', :confirm => "Delete Wiki?" %>
+                  <%= f.button :submit, "Delete Wiki", class:'delete pull-right', id:'delete', :confirm => "Delete Wiki?" %>
               <% end %>
             </div>
         <% end %>
@@ -52,6 +52,7 @@
 
 <script>
     $(document).ready(function(){
+
         function Editor(input, preview) {
             this.update = function () {
                 preview.innerHTML = markdown.toHTML(input.value);
@@ -60,8 +61,17 @@
             this.update();
         }
 
-        var $ = function (id) { return document.getElementById(id); };
-        new Editor($("text-input"), $("preview"));
+        //var $ = function (id) { return document.getElementById(id); };
+        new Editor($("#text-input")[0], $("#preview")[0]);
+
+        $('#edit').on('mouseover', function(){
+            console.log('edit')
+        })
+
+        $('#delete').on('mouseover', function(){
+            console.log('delete')
+        })
+
 
     });
 </script>
