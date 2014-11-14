@@ -13,7 +13,7 @@
           <tr>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
-            <td><%= check_box_tag "user_ids[]", user.id %></td>
+            <td><%= check_box_tag "user_ids[]", user.id, user.collab_on?(@wiki) %></td>
           </tr>
       <% end %>
 

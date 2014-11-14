@@ -21,6 +21,9 @@ class WikisController < ApplicationController
       return redirect_to @wiki, :status => :moved_permanently
     end
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
+    collaborator_ids = @wiki.collaborations.pluck(:user_id)
+    @collaborators = User.find(collaborator_ids)
+    # @collaborator_names = @collaborators.pluck(:name)
   end
 
   def update

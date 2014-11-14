@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     subscribed
   end
 
+  def collab_on?(wiki)
+    wiki.collaborations.where(user_id:self.id).any?
+  end
+
 end
 
 # user.wikis

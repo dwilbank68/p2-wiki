@@ -1,0 +1,3 @@
+class CollaborationPolicy < ApplicationPolicy
+
+end

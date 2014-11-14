@@ -1,23 +1,20 @@
 @import "bootstrap";
 @import "signin";
-//@import 'base/epiceditor';
+@import "font";
 //@import 'preview/bartik';
 //@import 'preview/github';
 //@import 'preview/preview-dark';
-//@import 'editor/epic-dark';
-//@import 'editor/epic-light';
+
 
 body {
-  background:url(/assets/checkerpaper.png);
-  background-repeat: repeat;
+  background-color:white;
 }
 
 .container {
-  background:url(https://dl.dropboxusercontent.com/u/2048705/2.jpg);
-  background-repeat: repeat;
-  -webkit-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
-     -moz-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
-          box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+
 }
 
 .row-inline {
@@ -26,7 +23,7 @@ body {
 .nav-icons {
   position:relative;
   font-size:2.4em;
-  color: #053f00;
+  color: #00CAFF;
 }
 .all {
   margin-left: 10px;
@@ -39,7 +36,8 @@ body {
   vertical-align: sub;
 }
 .headlines {
-  font-family: 'Oswald', sans-serif;
+//  font-family: 'Oswald', sans-serif;
+  font-family: 'quicksandlight';
   font-weight: bold;
   margin-left: 5px;
 }
@@ -50,52 +48,44 @@ h1 {
 
 .name-box {
   font-size: 1.5em;
-  font-weight: heavy;
   bottom-margin: -5px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
 }
 
 input.btn {
-  font-family: 'Oswald', sans-serif;
-  color: #053f00;
+//  font-family: 'Oswald', sans-serif;
+  font-family: 'quicksandlight';
+  background-color: white;
+  color: #CCC;
   font-size: 1.25em;
-//  margin-left: 5px;
   margin-bottom: 7px;
-  border-style: ridge;
-  border-width: 5px;
-  border-color: #BBB;
-  background-color: black;
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
+  border: 5px lightgray double;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   border-radius: 15px;
 }
 
 input.btn:hover, .headlines, .fa-angle-left:hover, .all:hover {
-  color: #0D0;
-  text-shadow:  0px -2px  7px     rgba(30,181,55, 1),
-                0px  2px  7px     rgba(30,181,55, 1),
-               -2px  0px  7px     rgba(30,181,55, 1),
-                2px  0px  7px     rgba(30,181,55, 1);
-}
-
-input.btn.delete {
-  color: #3f0500;
+  color: #00CAFF;
+  text-shadow:  0px 0px 10px rgba(0,202,255, 1);
 }
 
 input.btn.delete:hover {
   color: #D00;
-  text-shadow:  0px -2px  7px     rgba(181,30,55, 1),
-                0px  2px  7px     rgba(181,30,55, 1),
-               -2px  0px  7px     rgba(181,30,55, 1),
-                2px  0px  7px     rgba(181,30,55, 1);
+  text-shadow:  0px 0px 10px rgba(181,30,55, 1);
 }
 
 
 #text-input, #wiki_name, #preview, #icon-bar {
-  border-style: ridge;
-  border-width: 5px;
-  border-color: #BBB;
+  border: 5px lightgray double;
+  padding-left: 5px;
 //  margin: 5px;
 //  padding-bottom: 1px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
 }
 
 
@@ -156,7 +146,7 @@ input.btn.delete:hover {
   font-size: 1.25em;
   color: white;
   overflow: auto;
-  background:url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
+  background-color: #222;
 }
 
 ///////////////////////// Show Wiki Page //////////////////////////////

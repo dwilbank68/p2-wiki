@@ -15,17 +15,25 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-2">
+  <div class="col-xs-6 col-xs-offset-1">
     <div id="preview" class="show"> </div>
   </div>
 </div>
 
+<div class="collab-list col-xs-4">
+    <%#= @collaborators_names.each do |name| %>
+        <%#= name %>
+    <%# end %>
+
+    <%= render partial: "collaborations/collaborator" %>
+</div>
+
 <% if policy(@wiki).edit? %>
-    <%= link_to "Edit", edit_wiki_path, class: 'btn btn-warning' %>
+    <%= link_to "Edit", edit_wiki_path, class: 'btn btn-large' %>
 <% end %>
 
 <% if current_user.id == @wiki.user_id %>
-    <%= link_to "Edit Collaborators", wiki_collaborations_path(@wiki.id) %>
+    <%= link_to "Edit Collaborators", wiki_collaborations_path(@wiki.id), class: 'btn btn-large' %>
 <% end %>
 
 <script>

@@ -12,7 +12,14 @@
             <i class="fa fa-pencil-square-o"></i>
         <% end %>
       </td>
-      <td class="wiki-share" ><%= wiki.collaborations.count + 1 %></td>
+
+      <td class="wiki-share" >
+        <% if policy(wiki).edit? %>
+            <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id) %>
+        <% else %>
+            <%= wiki.collaborations.count + 1 %>
+        <% end %>
+      </td>
     </tr>
   </table>
 </li>

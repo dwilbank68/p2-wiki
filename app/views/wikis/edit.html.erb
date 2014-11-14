@@ -24,7 +24,6 @@
 
 
     <div class="row"> <!-- row 3 - the two text boxes -->
-      <!--<div class="col-sm-5 col-xs-12 input-panel">-->
       <div class="col-sm-5 col-xs-12">
         <textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
       </div>
@@ -32,13 +31,14 @@
       <div class="col-sm-7 col-xs-12 preview">
         <div id="preview"> </div>
       </div>
-    </div>
+    </div> <!-- row 3 - the two text boxes -->
 
     <div class="row #button-row"> <!-- row 4 - buttons -->
         <div class="col-xs-1">
             <%= w.button :submit, "Update Wiki" %>
-            <% end %>
+            <%# end %>
         </div>
+<% end %> <!--end simple_form for edit @wiki-->
 
         <% if policy(@wiki).destroy? %>
             <div class="col-xs-1 col-xs-offset-10">
