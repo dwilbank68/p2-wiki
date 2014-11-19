@@ -8,7 +8,7 @@ body {
   background-color:black;
 }
 
-.nav, .headlines, .collaborator, .name-box, #text-input, #preview {
+.nav, .headlines, .collaborator, .name-box, #text-input, #preview, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
 }
 
@@ -22,7 +22,7 @@ body {
   color: white;
 }
 
-.container, #text-input, #wiki_name, #preview, #icon-bar, #collab-list, .list-group, input.btn, #edit, #edit_collaborators {
+.container, #text-input, #wiki_name, #preview, #icon-bar, #collab-list, .list-group, input.btn, #edit, #edit_collaborators, #wiki-frame {
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
@@ -173,7 +173,7 @@ input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover {
 ////////////////////////// Wiki Index Page //////////////////////////////////////
 
 #wiki-frame {
-  height: 800px;
+  height: 600px;
   overflow: auto;
   margin-bottom: 20px;
 }
@@ -242,7 +242,8 @@ input#delete.btn:hover {
 //  padding: 0px;
 //}
 
-.collaborator {
+//.collaborator {
+.list-group-item {
   color: white;
   background: #303030; /* Old browsers */
   background: -moz-linear-gradient(top, #303030 0%, #474b51 99%, #828c95 100%, #28343b 100%); /* FF3.6+ */
@@ -295,4 +296,16 @@ div.row#button-row {
  }
 
 
-  //////////////////////////////////////////////////////////////////////
+  //////////////////////////// Collaboration Page /////////////////////////
+
+.name {
+  width: 230px;
+}
+
+.email {
+  width: 330px;
+}
+
+.check-box {
+  width: 20px;
+}

@@ -30,15 +30,17 @@ function removeBlueGlow() {
 }
 
 function addAmberGlow() {
-    $('#edit_collaborators').addClass('glow-amber-text');
-    $('#preview, #collab-list, #edit_collaborators').addClass('glow-amber-box');
-    $('.container').addClass('glow-amber-container');
+    //$('#edit_collaborators').addClass('glow-amber-text');
+    //$('#preview, #collab-list, #edit_collaborators').addClass('glow-amber-box');
+    $('#collab-list').addClass('glow-amber-box');
+    //$('.container').addClass('glow-amber-container');
 }
 
 function removeAmberGlow() {
-    $('#preview, #collab-list, #edit_collaborators').removeClass('glow-amber-box');
-    $('#edit_collaborators').removeClass('glow-amber-text');
-    $('.container').removeClass('glow-amber-container');
+    //$('#preview, #collab-list, #edit_collaborators').removeClass('glow-amber-box');
+    $('#collab-list').removeClass('glow-amber-box');
+    //$('#edit_collaborators').removeClass('glow-amber-text');
+    //$('.container').removeClass('glow-amber-container');
 }
 
 function addRedGlow() {

@@ -1,25 +1,24 @@
-<h1>Collaborations</h1>
+<div class="spacer"></div>
 
-<%= form_tag wiki_collaborations_path do %>
-    <table>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 col-xs-12" >
+    <div id="collab-list" class="list-group">
+      <%= form_tag wiki_collaborations_path do %>
+          <table class="list-group-item table table-bordered table-condensed">
+            <% @users.each do |user| %>
+                <tr>
+                  <td class="name"><%= user.name %></td>
+                  <td class="email"><%= user.email %></td>
+                  <td class="check-box"><%= check_box_tag "user_ids[]", user.id, user.collab_on?(@wiki) %></td>
+                </tr>
+            <% end %>
+          </table>
+      </div>
+  </div>
+</div>
 
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Add To Edit Group</th>
-      </tr>
+<div class="row">
+  <%= submit_tag "Update", class:'btn btn-success' %>
+</div>
 
-      <% @users.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <td><%= check_box_tag "user_ids[]", user.id, user.collab_on?(@wiki) %></td>
-          </tr>
-      <% end %>
-
-    </table>
-
-
-    <%= submit_tag "Update" %>
-
-<% end %>
+    <% end %>
