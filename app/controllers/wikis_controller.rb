@@ -1,9 +1,10 @@
 class WikisController < ApplicationController
-
+  include ActionView::Helpers::TextHelper #for #truncate in show controller
   before_action :find_wiki, only: [:edit, :show, :update, :destroy]
 
   def index
     @wikis = Wiki.includes(:user).all
+    @headline_text = "All Wikis"
   end
 
   def create
@@ -14,6 +15,7 @@ class WikisController < ApplicationController
   def edit
     authorize @wiki
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
+    @headline_text = "Edit"
   end
 
   def show
@@ -23,11 +25,13 @@ class WikisController < ApplicationController
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
     collaborator_ids = @wiki.collaborations.pluck(:user_id)
     @collaborators = User.find(collaborator_ids)
-    # @collaborator_names = @collaborators.pluck(:name)
+    # @headline_text = truncate(@wiki.name, length: 18)
+    @headline_text = @wiki.name.truncate(19)
   end
 
   def update
     authorize @wiki
+
     if @wiki.update!(wiki_params)
       redirect_to @wiki
     else
@@ -68,6 +72,7 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
   end
 
   def wiki_params
+    render :edit if params['edit']
     params.require(:wiki).permit(:name, :body)
   end
 
