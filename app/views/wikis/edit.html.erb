@@ -26,13 +26,13 @@
     <div class="row spacer"></div>
 
     <div class="row #button-row"> <!-- row 4 - buttons -->
-        <div>
+        <div class='col-sm-2 col-xs-12'>
             <%= w.button :submit, "Update Wiki", id:"update" %>
             <%# end %>
         </div>
 <% end %> <!--end simple_form for edit @wiki-->
 
-        <div id="privatize-div">
+        <div id="privatize-div" class='col-sm-2 col-xs-12'>
           <button id="privatize">
             <% if current_user.subscribed %>
                   <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, :remote => true %>
@@ -44,7 +44,7 @@
 
 
         <% if policy(@wiki).destroy? %>
-            <div class="col-xs-1 col-xs-offset-10">
+            <div class="col-sm-1 col-sm-offset-7 col-xs-12">
               <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
                   <%= f.button :submit, "Delete Wiki", class:'delete pull-right', id:'delete', :confirm => "Delete Wiki?" %>
               <% end %>

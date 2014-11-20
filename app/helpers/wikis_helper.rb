@@ -5,7 +5,7 @@ module WikisHelper
   end
 
   def privatize_link_text
-    @wiki.private? ? 'Make Wiki Public' : 'Make Wiki Private'
+    @wiki.private? ? 'Make Public' : 'Make Private'
   end
 
 end

@@ -3,7 +3,7 @@ class ChargesController < ApplicationController
   def new
     @stripe_btn_data = {
         key: "#{ Rails.configuration.stripe[:publishable_key] }",
-        description: "BigMoney Membership - #{current_user.name}",
+        description: "Wiki Membership - #{current_user.name}",
         amount: Amount.default
     }
   end
@@ -38,9 +38,11 @@ class ChargesController < ApplicationController
 
   class Amount
     @cost = 4.99
+
     def self.default
       @cost*100
     end
+
   end
 
 end
