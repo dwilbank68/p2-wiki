@@ -11,6 +11,14 @@ Rails.application.routes.draw do
     resources :collaborations, only: [:index, :create]
   end
 
+  resources :wikis do
+    patch 'privatize', :on => :member
+  end
+
+  # TODO - ask about this
+  # Xander also suggested (doesn't work)
+  # put :privatize, to "Wiki#privatize"
+
   resources :profiles, only: [:show]
 
   root 'welcome#index'

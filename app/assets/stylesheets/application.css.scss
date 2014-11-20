@@ -8,7 +8,7 @@ body {
   background-color:black;
 }
 
-.nav, .headlines, .collaborator, .name-box, #text-input, #preview, #wiki-frame, .list-group {
+.nav, .headlines, #public-private-bar, .collaborator, .name-box, #text-input, #preview, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
 }
 
@@ -22,13 +22,13 @@ body {
   color: white;
 }
 
-.container, #text-input, #wiki_name, #preview, #icon-bar, #collab-list, .list-group, input.btn, #edit, #edit_collaborators, #wiki-frame {
+.container, #text-input, #wiki_name, #preview, #icon-bar, #public-private-bar, #collab-list, .list-group, input.btn, #edit, #privatize, #edit_collaborators, #wiki-frame {
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
 }
 
-#icon-bar, input.btn, #edit, #edit_collaborators, #text-input, #wiki_name, #preview, #collab-list {
+#icon-bar, #public-private-bar, input.btn, #edit, #edit_collaborators, #text-input, #wiki_name, #preview, #collab-list {
   border: 5px lightgray double;
 }
 
@@ -37,7 +37,7 @@ body {
   box-shadow: 0px 0px 216px gray;
 }
 
-#icon-bar, input.btn, #edit, #edit_collaborators {
+#icon-bar, #public-private-bar, input.btn, #edit, #privatize, #edit_collaborators {
   background-color: #222;
 }
 
@@ -93,7 +93,7 @@ h1 {
   height: 6px;
 }
 
-input.btn, #edit, #edit_collaborators {
+input.btn, #edit, #privatize, #edit_collaborators {
   font-family: 'quicksandlight';
   text-decoration: none;
   color: #AAA;
@@ -131,7 +131,7 @@ input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover {
 
 ///////////////////////// Animation Transitions /////////////////////
 
-#edit, #delete, #preview, #text-input, #wiki_name, .all, .back, .container {
+#edit, #update, #privatize, #delete, #preview, #text-input, #wiki_name, .all, .back, .container {
   transition:       color .5s,
   box-shadow .5s,
   text-shadow .5s;
@@ -262,7 +262,7 @@ div.row#button-row {
   margin-top: 7px;
 }
 
-#edit, #edit_collaborators {
+#edit, #privatize, #edit_collaborators {
   color: #444;
 }
 
@@ -271,7 +271,7 @@ div.row#button-row {
   width: 100px;
 }
 
-#edit_collaborators {
+#privatize {
   height: 47px;
   width: 200px;
 }

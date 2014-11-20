@@ -1,3 +1,4 @@
+<div class="spacer"></div>
 <%= simple_form_for @wiki do |w| %>
 
     <div class="row"> <!-- row 2 - name field -->
@@ -25,14 +26,25 @@
     <div class="row spacer"></div>
 
     <div class="row #button-row"> <!-- row 4 - buttons -->
-        <div class="col-xs-1" id="edit-div">
+        <div>
             <%= w.button :submit, "Update Wiki", id:"update" %>
             <%# end %>
         </div>
 <% end %> <!--end simple_form for edit @wiki-->
 
+        <div id="privatize-div">
+          <button id="privatize">
+            <% if current_user.subscribed %>
+                  <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, :remote => true %>
+            <% else %>
+                <%= link_to "Make Wiki Private - Must Be Premium User", edit_wiki_path %>
+            <% end %>
+          </button>
+        </div>
+
+
         <% if policy(@wiki).destroy? %>
-            <div class="col-xs-1 col-xs-offset-10" id="delete-div">
+            <div class="col-xs-1 col-xs-offset-10">
               <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
                   <%= f.button :submit, "Delete Wiki", class:'delete pull-right', id:'delete', :confirm => "Delete Wiki?" %>
               <% end %>

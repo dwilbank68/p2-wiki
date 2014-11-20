@@ -1,10 +1,13 @@
 class WikisController < ApplicationController
   include ActionView::Helpers::TextHelper #for #truncate in show controller
-  before_action :find_wiki, only: [:edit, :show, :update, :destroy]
+  before_action :find_wiki, only: [:edit, :show, :update, :destroy, :privatize]
+
+  respond_to :html, :js
+
 
   def index
-    @wikis = Wiki.includes(:user).all
-    @headline_text = "All Wikis"
+    @wikis = Wiki.includes(:user).visible
+    @headline_text = "#{@wikis.count} Wikis (#{Wiki.hidden.count} priv)"
   end
 
   def create
@@ -61,6 +64,11 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
     authorize @wiki
     @wiki.destroy
     redirect_to wikis_path
+  end
+
+  def privatize
+    @wiki.toggle!(:private)
+    # render :nothing => true
   end
 
   ##############################

@@ -58,7 +58,11 @@
 
       <h1 class="headlines row-inline glow-blue-text"><%= @headline_text %></h1>
 
+      <p class="headlines row-inline pull-right"><%= @wiki.private ? 'private' : 'public' %></p>
+
     </div>
+
+
   </div>
 
   <% if flash[:notice] %>
