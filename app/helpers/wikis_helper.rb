@@ -1,7 +1,7 @@
 module WikisHelper
 
   def privatize_header_text
-    @wiki.private? ? 'Private' : 'Public'
+    @wiki.private? ? 'PRIVATE' : 'PUBLIC'
   end
 
   def privatize_link_text

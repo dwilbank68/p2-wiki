@@ -12,12 +12,12 @@
     <div class="row"> <!-- row 3 - the two text boxes -->
       <div class="col-sm-5 col-xs-12">
         <!--<textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>-->
-        <textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
+        <textarea id="text-input" class="form-control bordered" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
       </div>
 
     <%= link_to @wiki do %>
       <div class="col-sm-7 col-xs-12 preview">
-        <div id="preview"> </div>
+        <div id="preview" class="bordered"> </div>
       </div>
     <% end %>
 
@@ -27,26 +27,25 @@
 
     <div class="row #button-row"> <!-- row 4 - buttons -->
         <div class='col-sm-2 col-xs-12'>
-            <%= w.button :submit, "Update Wiki", id:"update" %>
+            <%= w.button :submit, "Update Wiki", id:"update", class:'dark-background'%>
             <%# end %>
         </div>
 <% end %> <!--end simple_form for edit @wiki-->
 
-        <div id="privatize-div" class='col-sm-2 col-xs-12'>
-          <button id="privatize">
+        <div id="privatize-div" class='col-sm-3 col-xs-12'>
+          <button id="privatize" class='bordered dark-background'>
             <% if current_user.subscribed %>
                   <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, :remote => true %>
             <% else %>
-                <%= link_to "Make Wiki Private - Must Be Premium User", edit_wiki_path %>
+                <%= link_to "Make Wiki Private - Upgrade To Premium Plan", new_charge_path %>
             <% end %>
           </button>
         </div>
 
-
         <% if policy(@wiki).destroy? %>
-            <div class="col-sm-1 col-sm-offset-7 col-xs-12">
+            <div class="col-sm-2  col-xs-12 pull-right text-right">
               <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
-                  <%= f.button :submit, "Delete Wiki", class:'delete pull-right', id:'delete', :confirm => "Delete Wiki?" %>
+                  <%= f.button :submit, "Delete Wiki", class:'delete', id:'delete', class:'dark-background', :confirm => "Delete Wiki?" %>
               <% end %>
             </div>
         <% end %>
@@ -66,8 +65,8 @@
 
         new Editor($("#text-input")[0], $("#preview")[0]);
 
-        $('.all').hover(  function(){$('.all').addClass('glow-blue-text')},  function(){$('.all').removeClass('glow-blue-text')} );
-        $('.back').hover( function(){$('.back').addClass('glow-blue-text')}, function(){$('.back').removeClass('glow-blue-text')} );
+//        $('#all').hover(  function(){$('#all').addClass('glow-light-text')},  function(){$('#all').removeClass('glow-light-text')} );
+//        $('#back').hover( function(){$('#back').addClass('glow-light-text')}, function(){$('#back').removeClass('glow-light-text')} );
 
         $('#update').hover( addBlueGlow, removeBlueGlow );
         $('#delete').hover( addRedGlow, removeRedGlow );

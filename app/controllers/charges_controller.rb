@@ -6,6 +6,8 @@ class ChargesController < ApplicationController
         description: "Wiki Membership - #{current_user.name}",
         amount: Amount.default
     }
+
+    render :layout => false
   end
 
   def create
@@ -25,9 +27,12 @@ class ChargesController < ApplicationController
 
     current_user.subscribed = true
     current_user.stripeid = customer.id
+    now = DateTime.now
+    current_user.account_activation = now
+    current_user.account_expiration = now + 31.days
     current_user.save
 
-    redirect_to profile_path, :notice => "Your subscription is active!"
+    redirect_to current_user, :notice => "Your subscription is active!"
 
 
 
@@ -40,7 +45,7 @@ class ChargesController < ApplicationController
     @cost = 4.99
 
     def self.default
-      @cost*100
+      (@cost*100).to_i
     end
 
   end

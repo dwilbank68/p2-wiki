@@ -38,6 +38,7 @@ end
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
+  gem 'whenever', require: false
   gem "better_errors"
   gem "binding_of_caller" #if you use better_errors
 end
@@ -67,6 +68,9 @@ gem 'epic-editor-rails'
 gem 'simple_form'
 gem 'stripe'
 gem 'friendly_id'
+
+gem 'local_time'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

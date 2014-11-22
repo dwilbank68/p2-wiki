@@ -1,4 +1,5 @@
 $link-color: #666;
+$navbar-default-color: white;
 
 @import "bootstrap";
 @import "signin";
@@ -8,13 +9,12 @@ body {
   background-color:black;
 }
 
-.nav, .headlines, #public-private-bar, .collaborator, .name-box, #text-input, #preview, #wiki-frame, .list-group {
+.nav, .bordered, .collaborator, .name-box, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
 }
 
 .nav {
   height:50px;
-  color: white;
   text-decoration: none;
 }
 
@@ -22,22 +22,20 @@ body {
   color: white;
 }
 
-.container, #text-input, #wiki_name, #preview, #icon-bar, #public-private-bar, #collab-list, .list-group, input.btn, #edit, #privatize, #edit_collaborators, #wiki-frame {
+.container, .bordered, #wiki_name, .list-group, input.btn, #edit, #edit_collaborators, #collab-list {
+  border: 5px lightgray double;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
 }
 
-#icon-bar, #public-private-bar, input.btn, #edit, #edit_collaborators, #text-input, #wiki_name, #preview, #collab-list {
-  border: 5px lightgray double;
-}
 
 .container {
   background-color: #888;
   box-shadow: 0px 0px 216px gray;
 }
 
-#icon-bar, #public-private-bar, input.btn, #edit, #privatize, #edit_collaborators {
+.dark-background, #public-private-bar, input.btn, #edit_collaborators {
   background-color: #222;
 }
 
@@ -51,35 +49,52 @@ body {
 /////////////////////// icon bar ///////////////////////////
 
 #icon-bar {
-  margin-left: 16px;
+  height: 70px;
 }
 
 .row-inline {
   display: inline-block;
+  height: 40px;
 }
 
+#headline, #all, #back {
+  font-family: DotMatrixExtended;
+}
+
+#headline-right {
+  font-family: DotMatrixRegular;
+}
+
+#all, #back, #headline, #headline-right {
+  font-size: 3.5em;
+  vertical-align: middle;
+}
 .nav-icons {
   position:relative;
-  font-size:2em;
-  color: #666;
+  color: #444;
 }
 
-.all {
-  margin-left: 10px;
-  margin-right: 8px;
+#all {
+  left: 10px;
 }
 
-.back { margin-right: 33px; }
-
-.fa-angle-left {
-  font-size: 4.25em;
-  vertical-align: sub;
+#back {
+  left: 18px;
 }
 
-.headlines {
-  color: #55f;
-//  font-weight: bold;
-  margin-left: 5px;
+
+
+#headline, #headline-right {
+  color: #fff;
+}
+
+#headline {
+  margin-left: 35px;
+}
+
+#headline-right {
+  margin-right: 10px;
+//  margin-top: 5px;
 }
 
 h1 {
@@ -104,9 +119,14 @@ input.btn, #edit, #privatize, #edit_collaborators {
 
 
 
-input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover {
+input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover, #privatize:hover {
   text-decoration: none;
   color:#55F;
+}
+
+.glow-light-text {
+  // color: #0FF; // does not work, so I had to use input.btn:hover - why?
+  text-shadow: 0 0 10px orange,0 0 30px gold;
 }
 
 .glow-blue-text {
@@ -125,13 +145,13 @@ input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover {
 
 
 
-#text-input, #wiki_name, #preview, #icon-bar {
+#text-input, #wiki_name, #preview {
   padding-left: 5px;
 }
 
 ///////////////////////// Animation Transitions /////////////////////
 
-#edit, #update, #privatize, #delete, #preview, #text-input, #wiki_name, .all, .back, .container {
+#edit, #update, #privatize, #delete, #preview, #text-input, #wiki_name, #all, #back, .container {
   transition:       color .5s,
   box-shadow .5s,
   text-shadow .5s;
@@ -273,7 +293,7 @@ div.row#button-row {
 
 #privatize {
   height: 47px;
-  width: 140px;
+//  width: 140px;
 }
 
 #edit_collaborators>a:hover {

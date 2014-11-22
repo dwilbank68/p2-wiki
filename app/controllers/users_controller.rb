@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @profile = current_user
     @my_wikis = Wiki.where user_id:current_user.id
-    @headline_text = "#{current_user.name}'s Wikis"
+    @headline_text = "Your Wikis"
   end
 
   def update

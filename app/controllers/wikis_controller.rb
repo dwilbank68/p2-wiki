@@ -7,7 +7,8 @@ class WikisController < ApplicationController
 
   def index
     @wikis = Wiki.includes(:user).visible
-    @headline_text = "#{@wikis.count} Wikis (#{Wiki.hidden.count} priv)"
+    @headline_text = "#{@wikis.count} Wikis"
+    @headline2_text = "(#{Wiki.hidden.count} private)"
   end
 
   def create

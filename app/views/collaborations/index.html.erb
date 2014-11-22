@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 col-xs-12" >
-    <div id="collab-list" class="list-group">
+    <div class="list-group bordered">
       <%= form_tag wiki_collaborations_path do %>
           <table class="list-group-item table table-bordered table-condensed">
             <% @users.each do |user| %>

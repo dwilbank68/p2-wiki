@@ -1,3 +1,38 @@
-<ul class="list-group">
-  <%= render @my_wikis %>
-</ul>
+<div class="spacer"></div>
+<div class="row">
+
+  <div class="col-sm-6 col-xs-12 ">
+    <div>
+      <ul class="list-group">
+        <%= render partial: 'wikis/wiki_special', collection: @my_wikis %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-xs-12">
+    <div class="bordered">
+      <% if current_user.subscribed? %>
+          <table class="table  table-condensed">
+            <th colspan="2" ><h4 class="text-center">You Are A Premium Member</h4></th>
+            <tr>
+              <td> Account Activated:</td> <td> <%= local_time(current_user.account_activation, '%B %e, %Y %l:%M%P %Z') %></td>
+            </tr>
+            <tr>
+              <td> Account Expires:</td>   <td> <%= local_time(current_user.account_expiration, '%B %e, %Y %l:%M%P %Z') %> </td>
+            </tr>
+            <tr>
+              <td colspan="2"> Your private wikis will default to public in <%= days_remaining %> </td>
+            </tr>
+          </table>
+
+      <% else %>
+          <table class="table table-condensed">
+            <th colspan="2"><h4 class="text-center">Free User</h4></th>
+            <td>Click Here To Subscribe</td>
+          </table>
+
+
+      <% end %></div>
+  </div>
+
+</div>

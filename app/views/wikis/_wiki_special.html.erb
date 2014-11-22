@@ -1,0 +1,34 @@
+
+<li class="list-group-item">
+  <table>
+    <tr>
+      <td class="wiki-name"  ><%= link_to wiki_special.name, wiki_special %></td>
+      <td class="wiki-owner" ><%= wiki_special.user.name %></td>
+      <td class="wiki-edit"  >
+        <% if policy(wiki_special).edit? %>
+            <%= link_to edit_wiki_path(wiki_special) do %>
+                <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+        <% else %>
+            <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+      </td>
+
+      <td class="wiki-share" >
+        <% if policy(wiki_special).edit? %>
+            <%= link_to wiki_special.collaborations.count + 1, wiki_collaborations_path(wiki_special.id) %>
+        <% else %>
+            <%= wiki_special.collaborations.count + 1 %>
+        <% end %>
+      </td>
+
+      <td>
+        <% if wiki_special.private? %>
+            <p>Private</p>
+        <% end %>
+      </td>
+
+
+    </tr>
+  </table>
+</li>

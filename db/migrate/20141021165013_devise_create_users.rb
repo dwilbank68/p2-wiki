@@ -24,6 +24,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## For Stripe
       t.boolean   :subscribed, :default => false
       t.string    :stripeid
+      t.datetime  :account_activation
+      t.datetime  :account_expiration
 
       ## Confirmable
       # t.string   :confirmation_token

@@ -45,21 +45,41 @@
 
 <div class='container'>
   <div class="spacer"></div>
-  <div class="row"> <!-- row 1 - black bar with glowing green -->
-    <div class="col-sm-6 col-xs-12" id="icon-bar">
+  <div class="row"> <!-- row 1 - black bar with glowing text -->
+    <div class="col-sm-6 col-xs-12" >
 
-      <%= link_to wikis_path do %>
-          <i class="fa fa-navicon    fa-3x nav-icons all  row-inline"></i>
-      <% end %>
+      <div id="icon-bar" class="bordered dark-background" >
 
-      <%= link_to session[:last_page] do %>
-          <i class="fa fa-angle-left fa-4x nav-icons back row-inline"></i>
-      <% end %>
+        <div class="row-inline pull-left">
+          <%= link_to wikis_path, class: 'all' do %>
 
-      <h1 class="headlines row-inline glow-blue-text"><%= @headline_text %></h1>
+              <span id="all" class="nav-icons">=</span>
+              <!--<span class="nav-icons all row-inline equals">=</span>-->
+          <% end %>
+        </div>
 
-      <p class="headlines row-inline pull-right"><%= @wiki.private ? 'private' : 'public' %></p>
+        <div class="row-inline pull-left">
+          <%= link_to session[:last_page] do %>
+              <span id="back" class="nav-icons row-inline">‹</span>
+          <% end %>
+        </div>
 
+        <div class="row-inline pull-left">
+          <span id="headline" class="glow-light-text"> <%= @headline_text %></span>
+        </div>
+
+      </div><!-- end #icon-bar-->
+
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+      <div id="icon-bar" class="bordered dark-background">
+        <% if @wiki %>
+            <span id="headline-right" class="glow-green-text pull-right"><%= privatize_header_text %></span>
+        <% else %>
+            <span id="headline-right" class="glow-green-text pull-right"><%= @headline2_text %></span>
+        <% end %>
+      </div>
     </div>
 
 
@@ -87,4 +107,28 @@
 </div><!--end container-->
 
 </body>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#all').hover(  function(){
+                $('#all').addClass('glow-light-text');
+                $('#all').css({'color':'white'});
+            },  function(){
+                $('#all').removeClass('glow-light-text');
+                $('#all').css({'color':'#444'});
+            } );
+
+            $('#back').hover( function(){
+                $('#back').addClass('glow-light-text');
+                $('#back').css({'color':'white'});
+            }, function(){
+                $('#back').removeClass('glow-light-text');
+                $('#back').css({'color':'#444'});
+            } );
+
+        });
+    </script>
+
+
 </html>

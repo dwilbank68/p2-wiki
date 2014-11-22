@@ -7,4 +7,8 @@ module ApplicationHelper
     (redcarpet.render text).html_safe
   end
 
+  def days_remaining
+    distance_of_time_in_words(DateTime.now, current_user.account_expiration)
+  end
+
 end

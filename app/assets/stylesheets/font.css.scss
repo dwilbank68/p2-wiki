@@ -92,3 +92,23 @@
     font-style: normal;
 
 }
+
+@font-face {
+  font-family: 'DotMatrixExtended';
+  src: url('dotmatrix-twoextended.eot');
+  src: url('dotmatrix-twoextended.eot') format('embedded-opentype'),
+  url('dotmatrix-twoextended.woff2') format('woff2'),
+  url('dotmatrix-twoextended.woff') format('woff'),
+  url('dotmatrix-twoextended.ttf') format('truetype'),
+  url('dotmatrix-twoextended.svg#DotMatrixRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'DotMatrixRegular';
+  src: url('dotmatrix-tworegular.eot');
+  src: url('dotmatrix-tworegular.eot') format('embedded-opentype'),
+  url('dotmatrix-tworegular.woff2') format('woff2'),
+  url('dotmatrix-tworegular.woff') format('woff'),
+  url('dotmatrix-tworegular.ttf') format('truetype'),
+  url('dotmatrix-tworegular.svg#DotMatrixRegular') format('svg');
+}

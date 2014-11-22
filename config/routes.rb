@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   end
 
   resources :wikis do
-    patch 'privatize', :on => :member
+    patch 'privatize', on: :member
   end
 
-  # TODO - ask about this
+  # TODO - try this latera
   # Xander also suggested (doesn't work)
-  # put :privatize, to "Wiki#privatize"
+  # put 'wikis/:id/privatize', to "Wiki#privatize"
 
   resources :profiles, only: [:show]
 
