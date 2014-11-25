@@ -6,14 +6,21 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:update, :show, :index]
 
-  resources :wikis
+  resources :wikis do
+    # resources :collaborations, only: [:index]
+    resources :collaborations, only: [:index, :create]
+  end
+
+  resources :wikis do
+    patch 'privatize', :on => :member
+  end
+
+  # TODO - ask about this
+  # Xander also suggested (doesn't work)
+  # put :privatize, to "Wiki#privatize"
 
   resources :profiles, only: [:show]
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   resources :charges, only: [:new, :create]

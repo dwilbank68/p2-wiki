@@ -11,6 +11,9 @@ class Wiki < ActiveRecord::Base
   validates_presence_of :name, :slug, :body
   validates_uniqueness_of :name, :case_sensitive => false
 
+  scope :visible, ->  { where( private: false ) }
+  scope :hidden, -> { where( private: true  ) }
+
   def should_generate_new_friendly_id?
     name_changed?
   end

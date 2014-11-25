@@ -1,9 +1,13 @@
 class WikisController < ApplicationController
+  include ActionView::Helpers::TextHelper #for #truncate in show controller
+  before_action :find_wiki, only: [:edit, :show, :update, :destroy, :privatize]
 
-  before_action :find_wiki, only: [:edit, :show, :update, :destroy]
+  respond_to :html, :js
+
 
   def index
-    @wikis = Wiki.includes(:user).all
+    @wikis = Wiki.includes(:user).visible
+    @headline_text = "#{@wikis.count} Wikis (#{Wiki.hidden.count} priv)"
   end
 
   def create
@@ -14,6 +18,7 @@ class WikisController < ApplicationController
   def edit
     authorize @wiki
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
+    @headline_text = "Edit"
   end
 
   def show
@@ -21,10 +26,15 @@ class WikisController < ApplicationController
       return redirect_to @wiki, :status => :moved_permanently
     end
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
+    collaborator_ids = @wiki.collaborations.pluck(:user_id)
+    @collaborators = User.find(collaborator_ids)
+    # @headline_text = truncate(@wiki.name, length: 18)
+    @headline_text = @wiki.name.truncate(19)
   end
 
   def update
     authorize @wiki
+
     if @wiki.update!(wiki_params)
       redirect_to @wiki
     else
@@ -56,6 +66,11 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
     redirect_to wikis_path
   end
 
+  def privatize
+    @wiki.toggle!(:private)
+    # render :nothing => true
+  end
+
   ##############################
 
   private
@@ -65,6 +80,7 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
   end
 
   def wiki_params
+    render :edit if params['edit']
     params.require(:wiki).permit(:name, :body)
   end
 

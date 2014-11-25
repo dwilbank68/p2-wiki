@@ -61,7 +61,7 @@ gem 'devise'
 gem 'figaro'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'pundit'
-#gem 'haml-rails'
+gem 'haml-rails'
 gem 'redcarpet' # to parse Markdown syntax
 gem 'epic-editor-rails'
 gem 'simple_form'

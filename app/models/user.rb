@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :collaborations
   has_many :wiki_contributions, :through => :collaborations, :source => :wiki
 
+  scope :all_except, ->(user) { where.not(id:user) }
+
   def admin?
     role == 'admin'          # which is really self.role == 'admin'
   end
@@ -19,6 +21,10 @@ class User < ActiveRecord::Base
 
   def subscribed?
     subscribed
+  end
+
+  def collab_on?(wiki)
+    wiki.collaborations.where(user_id:self.id).any?
   end
 
 end

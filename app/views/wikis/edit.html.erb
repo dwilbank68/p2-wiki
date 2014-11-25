@@ -1,60 +1,61 @@
-<div id="icon-bar">
-  <div class="all row-inline">
-    <%= link_to wikis_path do %>
-        <i class="fa fa-navicon fa-3x nav-icons"></i>
-    <% end %>
-  </div>
+<div class="spacer"></div>
+<%= simple_form_for @wiki do |w| %>
 
-  <div class="back row-inline">
-    <%= link_to session[:last_page] do %>
-        <i class="fa fa-angle-left fa-4x nav-icons"></i>
-    <% end %>
-  </div>
-
-  <div class="headlines row-inline">
-    <h1>Edit Wiki</h1>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="col-xs-6 input-panel">
-    <%= simple_form_for @wiki do |w| %>
-
-        <div class="input-group name-box">
-          <%= w.text_field :name, value: @wiki.name %>
-        </div>
-
-        <div class="input-group">
-          <textarea id="text-input" name="wiki[body]" rows="30" cols="80" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
-        </div>
-
-        <%= w.button :submit, "Update Wiki" %>
-    <% end %>
-  </div>
-
-  <div class="col-xs-6">
-      <div id="preview" class="col-xs-6"> </div>
-
-
-    <div> # for collaborations
-      <%#= simple_form_for(  ) do |f|%>
-          <%#= f.button :submit, "Edit Collaborators", class:'collab pull-right' %>
-      <%# end %>
+    <div class="row"> <!-- row 2 - name field -->
+      <div class="name-box col-sm-5 col-xs-12">
+        <%= w.text_field :name, value: @wiki.name %>
+      </div>
     </div>
 
-    <div>
-      <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
-          <%= f.button :submit, "Delete Wiki", class:'delete pull-right', :confirm => "Delete Wiki?" %>
-      <% end %>
+    <div class="row spacer"></div>
+
+    <div class="row"> <!-- row 3 - the two text boxes -->
+      <div class="col-sm-5 col-xs-12">
+        <!--<textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>-->
+        <textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" ><%=@wiki.body%></textarea>
+      </div>
+
+    <%= link_to @wiki do %>
+      <div class="col-sm-7 col-xs-12 preview">
+        <div id="preview"> </div>
+      </div>
+    <% end %>
+
+    </div> <!-- row 3 - the two text boxes -->
+
+    <div class="row spacer"></div>
+
+    <div class="row #button-row"> <!-- row 4 - buttons -->
+        <div>
+            <%= w.button :submit, "Update Wiki", id:"update" %>
+            <%# end %>
+        </div>
+<% end %> <!--end simple_form for edit @wiki-->
+
+        <div id="privatize-div">
+          <button id="privatize">
+            <% if current_user.subscribed %>
+                  <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, :remote => true %>
+            <% else %>
+                <%= link_to "Make Wiki Private - Must Be Premium User", edit_wiki_path %>
+            <% end %>
+          </button>
+        </div>
+
+
+        <% if policy(@wiki).destroy? %>
+            <div class="col-xs-1 col-xs-offset-10">
+              <%= simple_form_for(@wiki, :method => :delete ) do |f|%>
+                  <%= f.button :submit, "Delete Wiki", class:'delete pull-right', id:'delete', :confirm => "Delete Wiki?" %>
+              <% end %>
+            </div>
+        <% end %>
+
     </div>
-
-  </div>
-
-</div>
 
 <script>
     $(document).ready(function(){
+
         function Editor(input, preview) {
             this.update = function () {
                 preview.innerHTML = markdown.toHTML(input.value);
@@ -63,8 +64,15 @@
             this.update();
         }
 
-        var $ = function (id) { return document.getElementById(id); };
-        new Editor($("text-input"), $("preview"));
+        new Editor($("#text-input")[0], $("#preview")[0]);
+
+        $('.all').hover(  function(){$('.all').addClass('glow-blue-text')},  function(){$('.all').removeClass('glow-blue-text')} );
+        $('.back').hover( function(){$('.back').addClass('glow-blue-text')}, function(){$('.back').removeClass('glow-blue-text')} );
+
+        $('#update').hover( addBlueGlow, removeBlueGlow );
+        $('#delete').hover( addRedGlow, removeRedGlow );
+
+        $('#preview').hover( addGreenGlow, removeGreenGlow);
 
     });
 </script>

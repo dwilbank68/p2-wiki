@@ -1,5 +1,30 @@
 <li class="list-group-item">
-  <div>
-    <%= link_to wiki.name, wiki %> - <%= wiki.user.name %>
-  </div>
+  <table>
+    <tr>
+      <td class="wiki-name"  ><%= link_to wiki.name, wiki %></td>
+      <td class="wiki-owner" ><%= wiki.user.name %></td>
+      <td class="wiki-edit"  >
+        <% if policy(wiki).edit? %>
+            <%= link_to edit_wiki_path(wiki) do %>
+                <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+        <% else %>
+            <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+      </td>
+
+      <td class="wiki-share" >
+        <% if policy(wiki).edit? %>
+            <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id) %>
+        <% else %>
+            <%= wiki.collaborations.count + 1 %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 </li>
+
+
+<%#= link_to session[:last_page] do %>
+    <!--<i class="fa fa-angle-left fa-4x nav-icons back row-inline"></i>-->
+<%# end %>

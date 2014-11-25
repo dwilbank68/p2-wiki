@@ -1,15 +1,12 @@
-<h1>All Wikis</h1>
 
 <div class="row">
   <%= link_to 'New Wiki', new_wiki_path %>
 </div>
 
-<div class="wiki-frame col-xs-4 col-xs-offset-4">
-  <ul>
-    <%= render @wikis %>
-  </ul>
-</div>
-
-<div class="row">
-  <%= link_to 'New Wiki', new_wiki_path %>
+<div class="col-sm-6 col-sm-offset-3 col-xs-12">
+  <div id="wiki-frame" >
+    <ul class="list-group">
+      <%= render @wikis %>
+    </ul>
+  </div>
 </div>

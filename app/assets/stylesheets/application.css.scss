@@ -1,53 +1,84 @@
+$link-color: #666;
+
 @import "bootstrap";
 @import "signin";
-//@import 'base/epiceditor';
-//@import 'preview/bartik';
-//@import 'preview/github';
-//@import 'preview/preview-dark';
-//@import 'editor/epic-dark';
-//@import 'editor/epic-light';
+@import "font";
 
 body {
-  background:url(https://dl.dropboxusercontent.com/u/2048705/pattern-3037.png);
-  background-repeat: repeat;
+  background-color:black;
+}
+
+.nav, .headlines, #public-private-bar, .collaborator, .name-box, #text-input, #preview, #wiki-frame, .list-group {
+  font-family: 'quicksandregular';
+}
+
+.nav {
+  height:50px;
+  color: white;
+  text-decoration: none;
+}
+
+.user-info > a {
+  color: white;
+}
+
+.container, #text-input, #wiki_name, #preview, #icon-bar, #public-private-bar, #collab-list, .list-group, input.btn, #edit, #privatize, #edit_collaborators, #wiki-frame {
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+#icon-bar, #public-private-bar, input.btn, #edit, #edit_collaborators, #text-input, #wiki_name, #preview, #collab-list {
+  border: 5px lightgray double;
 }
 
 .container {
-  background:url(https://dl.dropboxusercontent.com/u/2048705/2.jpg);
-  background-repeat: repeat;
-  -webkit-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
-     -moz-box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
-          box-shadow: -8px 4px 41px 0px rgba(0,0,0,0.75);
+  background-color: #888;
+  box-shadow: 0px 0px 216px gray;
 }
 
-#icon-bar {
-  background-color: black;
-  margin-top: 10px;
-  margin-bottom: 0px;
+#icon-bar, #public-private-bar, input.btn, #edit, #privatize, #edit_collaborators {
+  background-color: #222;
 }
+
+#preview {
+  background:url(
+  data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2M0Njb+z0AEYBxkCgUFBRnev3+P4vLB5kZswUq0GwF2QRL7aYh8iAAAAABJRU5ErkJggg==
+  ) repeat;
+
+}
+
+/////////////////////// icon bar ///////////////////////////
+
+#icon-bar {
+  margin-left: 16px;
+}
+
 .row-inline {
   display: inline-block;
 }
+
+.nav-icons {
+  position:relative;
+  font-size:2em;
+  color: #666;
+}
+
 .all {
   margin-left: 10px;
   margin-right: 8px;
 }
+
 .back { margin-right: 33px; }
 
-.nav-icons {
-  position:relative;
-  font-size:2.4em;
-  color: #053f00;
-}
-
 .fa-angle-left {
-  font-size: 4.5em;
+  font-size: 4.25em;
   vertical-align: sub;
 }
 
 .headlines {
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
+  color: #55f;
+//  font-weight: bold;
   margin-left: 5px;
 }
 
@@ -55,57 +86,59 @@ h1 {
   margin-top: 0px;
 }
 
-.name-box {
-  font-size: 1.5em;
-  font-weight: heavy;
-  bottom-margin: -5px;
+///////////////////////////////////////////////////////////
+
+
+.spacer {
+  height: 6px;
 }
 
-input.btn {
-  font-family: 'Oswald', sans-serif;
-  color: #053f00;
+input.btn, #edit, #privatize, #edit_collaborators {
+  font-family: 'quicksandlight';
+  text-decoration: none;
+  color: #AAA;
+
   font-size: 1.25em;
-  margin-left: 5px;
   margin-bottom: 7px;
-  border-style: ridge;
-  border-width: 5px;
-  border-color: #BBB;
-  background-color: black;
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
-  border-radius: 15px;
 }
 
-input.btn:hover, .headlines, .fa-angle-left:hover, .all:hover {
-  color: #0D0;
-  text-shadow:  0px -2px  7px     rgba(30,181,55, 1),
-                0px  2px  7px     rgba(30,181,55, 1),
-               -2px  0px  7px     rgba(30,181,55, 1),
-                2px  0px  7px     rgba(30,181,55, 1);
+
+
+input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover {
+  text-decoration: none;
+  color:#55F;
 }
 
-input.btn.delete {
-  color: #3f0500;
+.glow-blue-text {
+  // color: #0FF; // does not work, so I had to use input.btn:hover - why?
+  text-shadow: 0px 0px 10px rgba(50,50,255, 1);
 }
 
-input.btn.delete:hover {
-  color: #D00;
-  text-shadow:  0px -2px  7px     rgba(181,30,55, 1),
-                0px  2px  7px     rgba(181,30,55, 1),
-               -2px  0px  7px     rgba(181,30,55, 1),
-                2px  0px  7px     rgba(181,30,55, 1);
+.glow-blue-box {
+  box-shadow:  0px 0px 10px rgba(50,50,255, 1),
+         inset 0px 0px 10px rgba(50,50,255, 1);
 }
+
+.glow-blue-container {
+  box-shadow: 0px 0px 110px rgba(0,0,255, 1);
+}
+
 
 
 #text-input, #wiki_name, #preview, #icon-bar {
-  border-style: ridge;
-  border-width: 5px;
-  border-color: #BBB;
-  margin: 5px;
-  padding-bottom: 1px;
+  padding-left: 5px;
 }
+
+///////////////////////// Animation Transitions /////////////////////
+
+#edit, #update, #privatize, #delete, #preview, #text-input, #wiki_name, .all, .back, .container {
+  transition:       color .5s,
+  box-shadow .5s,
+  text-shadow .5s;
+}
+
+/////////////////////////////////////////////////////////////////////
 .user-info { margin-top: 9px; }
-.nav { margin-top: 5px; }
 
 .box {
   border: solid 1px #AAA;
@@ -119,33 +152,160 @@ input.btn.delete:hover {
 
 #plans .glyphicon { font-size: 2.5em; }
 
-// New Wiki Page
+////////////////////////// Wiki Template ///////////////////////////////////////////
 
-.text-input {
-  //width: 600%;
+.wiki-name {
+  width: 150px;
+}
+
+.wiki-owner {
+  width: 150px;
+  font-size: .75em;
+}
+.wiki-edit, .wiki-share {
+  width: 20px;
+}
+
+//.wiki-share {
+//  width: 20px;
+//}
+
+////////////////////////// Wiki Index Page //////////////////////////////////////
+
+#wiki-frame {
+  height: 600px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+////////////////////////// New/Edit Wiki Page //////////////////////////////////////
+
+#text-input, #preview {
   height: 600px;
   overflow: auto;
 }
 
-#preview {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.25em;
-  color: white;
-  height: 605px;
-  //width: 552px;
-  width: 627px;
-  margin-top: 51px;
-  margin-left: -78px;
-  overflow: auto;
-  background:url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
+.name-box {
+  font-size: 1.5em;
+  bottom-margin: -5px;
 }
 
-// Show Wiki Page
+#wiki_name {
+
+}
+
+#preview {
+  font-size: 1.25em;
+  color: white;
+}
+
+input#delete.btn:hover {
+  color:#F00;
+}
+
+.glow-red-text {
+  // color: #F00; // does not work, so I had to use input.btn:hover - why?
+  text-shadow: 0px 0px 10px rgba(202,0,0, 1);
+}
+
+
+.glow-red-box {
+  box-shadow:  0px 0px 10px rgba(202,000,0, 1),
+  inset 0px 0px 10px rgba(202,0,0, 1);
+}
+
+.glow-red-container {
+  box-shadow: 0px 0px 110px rgba(202,0,0, 1);
+}
+
+.glow-green-text {
+  // color: #F00; // does not work, so I had to use input.btn:hover - why?
+  text-shadow: 0px 0px 10px rgba(0,255,0, 1);
+}
+
+
+.glow-green-box {
+  box-shadow:  0px 0px 10px rgba(0,255,0, 1),
+  inset 0px 0px 10px rgba(0,255,0, 1);
+}
+
+.glow-green-container {
+  box-shadow: 0px 0px 60px rgba(0,255,0, 1);
+}
+///////////////////////// Show Wiki Page //////////////////////////////
 
 #preview.show {
-  margin: 0px;
+  margin-bottom: 30px;
+}
+
+//#collab-list {
+//  padding: 0px;
+//}
+
+//.collaborator {
+.list-group-item {
+  color: white;
+  background: #303030; /* Old browsers */
+  background: -moz-linear-gradient(top, #303030 0%, #474b51 99%, #828c95 100%, #28343b 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#303030), color-stop(99%,#474b51), color-stop(100%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* W3C */
 }
 
 #hidden-text {
   display: none;
+}
+
+div.row#button-row {
+  margin-top: 7px;
+}
+
+#edit, #privatize, #edit_collaborators {
+  color: #444;
+}
+
+#edit {
+  height: 47px;
+  width: 100px;
+}
+
+#privatize {
+  height: 47px;
+  width: 200px;
+}
+
+#edit_collaborators>a:hover {
+  color: #FFBE00;
+  text-decoration: none;
+}
+
+.glow-amber-text {
+  // color: #F00; // does not work, so I had to use input.btn:hover - why?
+  text-shadow: 0px 0px 10px rgb(255, 190, 0);
+}
+
+.glow-amber-box {
+  box-shadow: 0px 0px 10px rgb(255, 190, 0),
+  inset 0px 0px 10px rgb(255, 190, 0);
+}
+
+ .glow-amber-container {
+    box-shadow: 0px 0px 110px rgba(255,190,0, 1);
+ }
+
+
+  //////////////////////////// Collaboration Page /////////////////////////
+
+.name {
+  width: 230px;
+}
+
+.email {
+  width: 330px;
+}
+
+.check-box {
+  width: 20px;
 }
