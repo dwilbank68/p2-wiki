@@ -37,13 +37,15 @@
   </div>
 
   <div class='col-sm-3 col-xs-12'>
-    <button id="toggle-privatize-button" class='bordered dark-background'>
-      <% if current_user.subscribed %>
-          <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, class:'button-bigger dot-matrix-reg glow-light-text', :remote => true %>
-      <% else %>
-          <%= link_to "Upgrade To Premium Plan", new_charge_path,               class:'button-bigger dot-matrix-reg glow-light-text' %>
-      <% end %>
-    </button>
+    <% if policy(@wiki).edit? %>
+        <button id="toggle-privatize-button" class='bordered dark-background'>
+          <% if current_user.subscribed %>
+              <%= link_to privatize_link_text, privatize_wiki_path, method: :patch, class:'button-bigger dot-matrix-reg glow-light-text', :remote => true %>
+          <% else %>
+              <%= link_to "Upgrade To Premium Plan", new_charge_path,               class:'button-bigger dot-matrix-reg glow-light-text' %>
+          <% end %>
+        </button>
+    <% end %>
   </div>
 
 </div>

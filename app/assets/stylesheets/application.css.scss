@@ -5,7 +5,19 @@ $navbar-default-color: white;
 @import "signin";
 @import "font";
 
-body { background-color:black;  }
+html {
+  height: 100%;
+}
+
+body {
+//        background-color: rgb(42,39,160); /*top colour*/
+//        background-image: -webkit-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+//        background-image:    -moz-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+//        background-image:      -o-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+        background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
+}
+
+
 
 .quicksand, nav, .collaborator, .name-box, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
@@ -17,7 +29,7 @@ body { background-color:black;  }
 }
 
 .container, .bordered, #wiki_name, .list-group, input.btn, #edit, #edit_collaborators, #collab-list {
-  border: 5px lightgray double;
+  border: 5px gray double;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
@@ -106,12 +118,8 @@ body { background-color:black;  }
 //////////////////// welcome page //////////////////////////
 
     .container {
-      background-color: rgb(42,39,160); /*top colour*/
-      background-image: -webkit-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-      background-image:    -moz-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-      background-image:      -o-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-      background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
-
+      background-image: url("/assets/silver2.jpg");
+      background-color: #cccccc;
     }
 
     #welcome-headline {
