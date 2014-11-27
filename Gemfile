@@ -41,6 +41,7 @@ group :development do
   gem 'whenever', require: false
   gem "better_errors"
   gem "binding_of_caller" #if you use better_errors
+  gem 'unicorn-rails'
 end
 
 group :test do
@@ -70,9 +71,9 @@ gem 'stripe'
 gem 'friendly_id'
 
 gem 'local_time'
-
+gem 'annotate'
 # Use unicorn as the app server
-# gem 'unicorn'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

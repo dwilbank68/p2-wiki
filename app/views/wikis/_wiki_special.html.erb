@@ -1,31 +1,33 @@
 
 <li class="list-group-item">
-  <table>
+  <table class="table">
     <tr>
-      <td class="wiki-name"  ><%= link_to wiki_special.name, wiki_special %></td>
-      <td class="wiki-owner" ><%= wiki_special.user.name %></td>
+      <td class="wiki-name button-font"  ><%= link_to wiki_special.name, wiki_special, class:'glow-light-text' %></td>
+      <td class="wiki-owner glow-light-text" ><%= wiki_special.user.name %></td>
       <td class="wiki-edit"  >
         <% if policy(wiki_special).edit? %>
             <%= link_to edit_wiki_path(wiki_special) do %>
-                <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-pencil-square-o glow-light-text"></i>
             <% end %>
         <% else %>
-            <i class="fa fa-pencil-square-o"></i>
+            <i class="fa fa-pencil-square-o text-muted"></i>
         <% end %>
       </td>
 
-      <td class="wiki-share" >
+      <td class="wiki-share dot-matrix-reg glow-light-text" >
         <% if policy(wiki_special).edit? %>
-            <%= link_to wiki_special.collaborations.count + 1, wiki_collaborations_path(wiki_special.id) %>
+            <%= link_to wiki_special.collaborations.count + 1, wiki_collaborations_path(wiki_special.id), class:'dot-matrix-reg glow-light-text' %>
         <% else %>
-            <%= wiki_special.collaborations.count + 1 %>
+            <span class="glow-light-text"><%= wiki_special.collaborations.count + 1 %></span>
         <% end %>
       </td>
 
-      <td>
+      <td class="wiki-private">
         <% if wiki_special.private? %>
-            <p>Private</p>
-        <% end %>
+            <p class="dot-matrix-reg glow-light-text">Private</p>
+        <% else %>
+            <p class="dot-matrix-reg glow-dim-text">Public</p>
+      <% end %>
       </td>
 
 

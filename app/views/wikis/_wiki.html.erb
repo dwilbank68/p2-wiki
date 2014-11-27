@@ -1,23 +1,23 @@
 <li class="list-group-item">
-  <table>
+  <table class="table table-condensed">
     <tr>
-      <td class="wiki-name"  ><%= link_to wiki.name, wiki %></td>
-      <td class="wiki-owner" ><%= wiki.user.name %></td>
-      <td class="wiki-edit"  >
+      <td class="wiki-name button-font"  ><%= link_to wiki.name, wiki, class:'glow-light-text' %></td>
+      <td class="wiki-owner dot-matrix-reg glow-light-text" ><%= wiki.user.name %></td>
+      <td class="wiki-edit">
         <% if policy(wiki).edit? %>
             <%= link_to edit_wiki_path(wiki) do %>
-                <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-pencil-square-o glow-light-text"></i>
             <% end %>
         <% else %>
-            <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-pencil-square-o text-muted"></i>
         <% end %>
       </td>
 
-      <td class="wiki-share" >
+      <td class="wiki-share dot-matrix-reg" >
         <% if policy(wiki).edit? %>
-            <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id) %>
+            <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id), class:'dot-matrix-reg glow-light-text' %>
         <% else %>
-            <%= wiki.collaborations.count + 1 %>
+            <span class="glow-light-text"><%= wiki.collaborations.count + 1 %></span>
         <% end %>
       </td>
     </tr>

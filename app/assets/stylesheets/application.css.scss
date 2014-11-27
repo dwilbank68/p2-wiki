@@ -5,21 +5,15 @@ $navbar-default-color: white;
 @import "signin";
 @import "font";
 
-body {
-  background-color:black;
-}
+body { background-color:black;  }
 
-.nav, .bordered, .collaborator, .name-box, #wiki-frame, .list-group {
+.quicksand, nav, .collaborator, .name-box, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
 }
 
 .nav {
   height:50px;
   text-decoration: none;
-}
-
-.user-info > a {
-  color: white;
 }
 
 .container, .bordered, #wiki_name, .list-group, input.btn, #edit, #edit_collaborators, #collab-list {
@@ -31,11 +25,11 @@ body {
 
 
 .container {
-  background-color: #888;
-  box-shadow: 0px 0px 216px gray;
+  box-shadow: 0px 0px 100px turquoise;
+  margin-top: 9px;
 }
 
-.dark-background, #public-private-bar, input.btn, #edit_collaborators {
+.dark-background, input.btn, #edit_collaborators {
   background-color: #222;
 }
 
@@ -43,72 +37,148 @@ body {
   background:url(
   data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2M0Njb+z0AEYBxkCgUFBRnev3+P4vLB5kZswUq0GwF2QRL7aYh8iAAAAABJRU5ErkJggg==
   ) repeat;
-
 }
+
+/////////////////////////// Colors and Glows ////////////////////////////////////
+
+            .glow-dim-text {
+              color: white;
+              text-shadow: 0 0 10px gold;
+              vertical-align: middle;
+            }
+
+            .glow-light-text {
+              color: white;
+              text-shadow: 0 0 10px orange,0 0 30px gold;
+              vertical-align: middle;
+            }
+
+            a.glow-light-text:hover {
+              color: white;
+              text-decoration: none;
+              text-shadow: 0 0 10px orange,0 0 30px gold, 0 0 20px orange,0 0 50px gold;
+            }
+
+            .glow-blue-text {
+              color: white;
+              text-shadow: 0 0 10px blue, 0 0 30px lightblue;
+            }
+
+            .glow-blue-text:hover {
+              color: white;
+              text-decoration: none;
+              text-shadow: 0 0 10px blue, 0 0 30px lightblue, 0 0 20px blue, 0 0 50px lightblue;
+            }
+
+            .glow-red-text {
+              color: darkred;
+//              text-shadow: 0px 0px 5px red;
+            }
+
+            .glow-red-text:hover {
+              color: red;
+              text-shadow: 0px 0px 10px red;
+            }
+
+            .glow-green-text {
+              color: #AFA;
+              text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen;
+            }
+
+            .glow-green-text:hover {
+              color: #FFF;
+              text-decoration: none;
+              text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen, 0px 0px 20px green, 0px 0px 50px limegreen;
+            }
+
+
+            .glow-gold-text {
+              color: #FFBE00;
+              text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow;
+            }
+
+            .glow-gold-text:hover {
+              color: #FFFF00;
+              text-decoration: none;
+              text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow, 0px 0px 20px yellow, 0px 0px 50px lightyellow;
+            }
+
+//////////////////// welcome page //////////////////////////
+
+    .container {
+      background-color: rgb(42,39,160); /*top colour*/
+      background-image: -webkit-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+      background-image:    -moz-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+      background-image:      -o-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
+      background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
+
+    }
+
+    #welcome-headline {
+      font-size: 4em;
+      margin-top: 27px;
+    }
+
+    .glyphicon { top: 5px; }
+
+    .user-info { margin-top: 9px; }
+
+    .box {
+      border: solid 1px #AAA;
+      margin-top: 20px;
+      line-height: 250%;
+    }
+
+    .welcome-icons { font-size: 2.5em; }
+
+    #plans { margin-bottom: 30px; }
 
 /////////////////////// icon bar ///////////////////////////
 
-#icon-bar {
-  height: 70px;
-}
+#icon-bar {  height: 70px;  }
 
 .row-inline {
   display: inline-block;
   height: 40px;
 }
 
-#headline, #all, #back {
-  font-family: DotMatrixExtended;
-}
+.dot-matrix-ext {  font-family: DotMatrixExtended; }
 
-#headline-right {
-  font-family: DotMatrixRegular;
-}
+.dot-matrix-reg { font-family: DotMatrixRegular; }
 
 #all, #back, #headline, #headline-right {
-  font-size: 3.5em;
+  font-size: 3.0em;
   vertical-align: middle;
 }
-.nav-icons {
-  position:relative;
-  color: #444;
+
+#headline-right { font-size: 2em; }
+
+.nav-icons {  position:relative;  }
+
+#all { left: 10px; }
+
+#back { left: 18px; }
+
+#headline { margin-left: 35px; }
+
+#headline-right { margin-right: 10px;}
+
+.html-marquee {
+  font-family: DotMatrixRegular;
+  behavior: 'slide';
+  scrollamount: 7;
+  direction:'left';
 }
 
-#all {
-  left: 10px;
-}
-
-#back {
-  left: 18px;
-}
-
-
-
-#headline, #headline-right {
-  color: #fff;
-}
-
-#headline {
-  margin-left: 35px;
-}
-
-#headline-right {
-  margin-right: 10px;
-//  margin-top: 5px;
-}
-
-h1 {
-  margin-top: 0px;
-}
-
-///////////////////////////////////////////////////////////
-
+h1 { margin-top: 0px; }
 
 .spacer {
   height: 6px;
 }
+/////////////////// buttons ///////////////////////////
 
-input.btn, #edit, #privatize, #edit_collaborators {
+
+#edit_collaborators {
   font-family: 'quicksandlight';
   text-decoration: none;
   color: #AAA;
@@ -117,78 +187,31 @@ input.btn, #edit, #privatize, #edit_collaborators {
   margin-bottom: 7px;
 }
 
-
-
-input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover, #privatize:hover {
-  text-decoration: none;
-  color:#55F;
+.button-bigger {
+  font-size: 1.25em;
 }
-
-.glow-light-text {
-  // color: #0FF; // does not work, so I had to use input.btn:hover - why?
-  text-shadow: 0 0 10px orange,0 0 30px gold;
-}
-
-.glow-blue-text {
-  // color: #0FF; // does not work, so I had to use input.btn:hover - why?
-  text-shadow: 0px 0px 10px rgba(50,50,255, 1);
-}
-
-.glow-blue-box {
-  box-shadow:  0px 0px 10px rgba(50,50,255, 1),
-         inset 0px 0px 10px rgba(50,50,255, 1);
-}
-
-.glow-blue-container {
-  box-shadow: 0px 0px 110px rgba(0,0,255, 1);
-}
-
-
 
 #text-input, #wiki_name, #preview {
   padding-left: 5px;
 }
 
+#edit, #toggle-privatize-button { height:47px; }
+
 ///////////////////////// Animation Transitions /////////////////////
 
-#edit, #update, #privatize, #delete, #preview, #text-input, #wiki_name, #all, #back, .container {
-  transition:       color .5s,
-  box-shadow .5s,
-  text-shadow .5s;
+.glow-blue-text, .glow-gold-text, .glow-green-text, .glow-light-text, .glow-red-text {
+  transition: color .5s, box-shadow .5s, text-shadow .5s;
 }
-
-/////////////////////////////////////////////////////////////////////
-.user-info { margin-top: 9px; }
-
-.box {
-  border: solid 1px #AAA;
-  margin-top: 20px;
-  line-height: 250%;
-}
-
-// Signup Page
-
-#signup-box { border: solid 3px black; }
-
-#plans .glyphicon { font-size: 2.5em; }
 
 ////////////////////////// Wiki Template ///////////////////////////////////////////
 
-.wiki-name {
-  width: 150px;
-}
+.wiki-name { width: 150px; }
 
 .wiki-owner {
   width: 150px;
   font-size: .75em;
 }
-.wiki-edit, .wiki-share {
-  width: 20px;
-}
-
-//.wiki-share {
-//  width: 20px;
-//}
+.wiki-edit, .wiki-share { width: 20px; }
 
 ////////////////////////// Wiki Index Page //////////////////////////////////////
 
@@ -197,6 +220,9 @@ input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover, #privatize:hover
   overflow: auto;
   margin-bottom: 20px;
 }
+.wiki-name { width: 250px; }
+.wiki-owner { width: 200px; }
+.wiki-edit { width: 40px; }
 
 ////////////////////////// New/Edit Wiki Page //////////////////////////////////////
 
@@ -210,52 +236,16 @@ input#update.btn:hover, .all:hover, .back:hover, #edit>a:hover, #privatize:hover
   bottom-margin: -5px;
 }
 
-#wiki_name {
-
-}
-
 #preview {
   font-size: 1.25em;
   color: white;
 }
 
-input#delete.btn:hover {
-  color:#F00;
-}
 
-.glow-red-text {
-  // color: #F00; // does not work, so I had to use input.btn:hover - why?
-  text-shadow: 0px 0px 10px rgba(202,0,0, 1);
-}
-
-
-.glow-red-box {
-  box-shadow:  0px 0px 10px rgba(202,000,0, 1),
-  inset 0px 0px 10px rgba(202,0,0, 1);
-}
-
-.glow-red-container {
-  box-shadow: 0px 0px 110px rgba(202,0,0, 1);
-}
-
-.glow-green-text {
-  // color: #F00; // does not work, so I had to use input.btn:hover - why?
-  text-shadow: 0px 0px 10px rgba(0,255,0, 1);
-}
-
-
-.glow-green-box {
-  box-shadow:  0px 0px 10px rgba(0,255,0, 1),
-  inset 0px 0px 10px rgba(0,255,0, 1);
-}
-
-.glow-green-container {
-  box-shadow: 0px 0px 60px rgba(0,255,0, 1);
-}
 ///////////////////////// Show Wiki Page //////////////////////////////
 
 #preview.show {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 //#collab-list {
@@ -282,50 +272,30 @@ div.row#button-row {
   margin-top: 7px;
 }
 
-#edit, #privatize, #edit_collaborators {
-  color: #444;
-}
-
 #edit {
-  height: 47px;
   width: 100px;
 }
-
-#privatize {
-  height: 47px;
-//  width: 140px;
-}
-
-#edit_collaborators>a:hover {
-  color: #FFBE00;
-  text-decoration: none;
-}
-
-.glow-amber-text {
-  // color: #F00; // does not work, so I had to use input.btn:hover - why?
-  text-shadow: 0px 0px 10px rgb(255, 190, 0);
-}
-
-.glow-amber-box {
-  box-shadow: 0px 0px 10px rgb(255, 190, 0),
-  inset 0px 0px 10px rgb(255, 190, 0);
-}
-
- .glow-amber-container {
-    box-shadow: 0px 0px 110px rgba(255,190,0, 1);
- }
 
 
   //////////////////////////// Collaboration Page /////////////////////////
 
-.name {
-  width: 230px;
+.name { width: 230px; }
+
+.email { width: 330px; }
+
+.check-box { width: 20px; }
+
+
+/////////////////////////// pulsing glow /////////////////////////////////
+
+@-webkit-keyframes lightPulse {
+  from { -webkit-text-shadow: 0 0 9px #333; }
+  50% { -webkit-text-shadow: 0 0 18px #91bd09; }
+  to { -webkit-text-shadow: 0 0 9px #333; }
 }
 
-.email {
-  width: 330px;
-}
-
-.check-box {
-  width: 20px;
+#signup-box > a {
+  -webkit-animation-name: lightPulse;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-iteration-count: infinite;
 }

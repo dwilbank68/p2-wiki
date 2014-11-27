@@ -18,7 +18,7 @@
 
   <div class="pull-right user-info">
     <% if current_user %>
-        <span class="glow-light-text">
+        <span >
           <%= link_to "#{(current_user.name || current_user.email)}'s Wikis", current_user, class:'glow-light-text dot-matrix-reg' %>
         </span>
 
@@ -45,60 +45,7 @@
 
 
 <div class='container'>
-  <div class="spacer"></div>
-  <div class="row"> <!-- row 1 - black bar with glowing text -->
-    <div class="col-sm-6 col-xs-12" >
 
-      <div id="icon-bar" class="bordered dark-background" >
-
-        <div class="row-inline pull-left">
-          <%= link_to wikis_path, class: 'all' do %>
-
-              <span id="all" class="nav-icons dot-matrix-ext">=</span>
-              <!--<span class="nav-icons all row-inline equals">=</span>-->
-          <% end %>
-        </div>
-
-        <div class="row-inline pull-left">
-          <%= link_to session[:last_page] do %>
-              <span id="back" class="nav-icons row-inline dot-matrix-ext">‹</span>
-          <% end %>
-        </div>
-
-        <div class="row-inline pull-left">
-          <span id="headline" class="glow-light-text dot-matrix-ext"> <%= @headline_text %></span>
-        </div>
-
-      </div><!-- end #icon-bar-->
-
-    </div>
-
-    <div class="col-sm-6 col-xs-12">
-      <div id="icon-bar" class="bordered dark-background">
-        <div>
-
-          <marquee class="html-marquee glow-light-text">
-            <% if @wiki %>
-                <span id="headline-right" class="glow-light-text dot-matrix-reg"><%= privatize_header_text %></span>
-            <% else %>
-                <span id="headline-right" class="glow-light-text dot-matrix-reg"><%= @headline2_text %></span>
-            <% end %>
-          </marquee>
-
-        </div>
-
-        <!--<div>-->
-          <!--<% if @wiki %>-->
-              <!--<span id="headline-right" class="glow-green-text pull-right dot-matrix-reg"><%= privatize_header_text %></span>-->
-          <!--<% else %>-->
-              <!--<span id="headline-right" class="glow-green-text pull-right dot-matrix-reg"><%= @headline2_text %></span>-->
-          <!--<% end %>-->
-        <!--</div>-->
-      </div>
-    </div>
-
-
-  </div>
 
   <% if flash[:notice] %>
       <div class="alert alert-success">

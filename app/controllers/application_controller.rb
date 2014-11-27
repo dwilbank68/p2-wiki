@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  layout :specify_layout
+
   rescue_from Pundit::NotAuthorizedError do |exception|
     redirect_to root_url, alert: exception.message
   end
@@ -18,6 +20,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
+  end
+
+  def specify_layout
+    devise_controller? ? "application_stripped_for_devise" : "application"
   end
 
 end

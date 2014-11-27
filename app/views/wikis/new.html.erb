@@ -1,19 +1,3 @@
-<div class="row"> <!-- row 1 - black bar with glowing green -->
-  <div class="col-sm-5 col-xs-12">
-
-    <%= link_to wikis_path do %>
-        <i class="fa fa-navicon    fa-3x nav-icons all  row-inline"></i>
-    <% end %>
-
-    <%= link_to session[:last_page] do %>
-        <i class="fa fa-angle-left fa-4x nav-icons back row-inline"></i>
-    <% end %>
-
-    <h1 class="headlines row-inline">New Wiki</h1>
-
-  </div>
-</div>            <!-- row 1 - black bar with glowing green -->
-
 <%= simple_form_for Wiki.new do |w| %>
 
     <div class="row"> <!-- row 2 - name field -->
@@ -24,17 +8,18 @@
 
     <div class="row"> <!-- row 3 - the two text boxes -->
       <div class="col-sm-5 col-xs-12">
-        <textarea id="text-input" class="form-control" name="wiki[body]" oninput="this.editor.update()" placeholder=""><%= @filler_text %></textarea>
+        <textarea id="text-input" class="form-control bordered quicksand" name="wiki[body]" oninput="this.editor.update()" placeholder=""><%= @filler_text %></textarea>
       </div>
 
       <div class="col-sm-7 col-xs-12 preview">
-        <div id="preview"> </div>
+        <div id="preview" class="bordered quicksand"> </div>
       </div>
     </div>            <!-- row 3 - the two text boxes -->
 
     <div class='row' id='button-row'>
-      <div class='col-sx-1'>
-        <%= w.button :submit, 'Create Wiki' %>
+      <div class='col-sx-1 glow-light-text'>
+        <%= w.button :submit, class:"dot-matrix-reg glow-light-text"%>
+
       </div>
     </div>
     
@@ -50,8 +35,8 @@
             this.update();
         }
 
-        var $ = function (id) { return document.getElementById(id); };
-        new Editor($("text-input"), $("preview"));
+        new Editor($("#text-input")[0], $("#preview")[0]);
 
     });
 </script>
+

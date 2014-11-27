@@ -1,7 +1,7 @@
 class WikisController < ApplicationController
   include ActionView::Helpers::TextHelper #for #truncate in show controller
   before_action :find_wiki, only: [:edit, :show, :update, :destroy, :privatize]
-
+  before_action :authenticate_user!
   respond_to :html, :js
 
 
@@ -13,7 +13,8 @@ class WikisController < ApplicationController
 
   def create
     current_user.wikis.create(wiki_params)
-    redirect_to wikis_path
+    #TODO - uppercase the name before creating or updating wiki - easy way to do it or have to alter params hash?
+    redirect_to current_user
   end
 
   def edit
@@ -30,7 +31,7 @@ class WikisController < ApplicationController
     collaborator_ids = @wiki.collaborations.pluck(:user_id)
     @collaborators = User.find(collaborator_ids)
     # @headline_text = truncate(@wiki.name, length: 18)
-    @headline_text = @wiki.name.truncate(19)
+    @headline_text = @wiki.name.truncate(15)
   end
 
   def update
@@ -59,6 +60,7 @@ Markdown
 To see what else you can do with Markdown (including **tables**, **images**, **numbered lists**, and more) take a look at the [Cheatsheet][1]. And then try it out by typing in this box!
 
 [1]: https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet"
+    @headline_text = "New Wiki"
   end
 
   def destroy
@@ -82,6 +84,7 @@ To see what else you can do with Markdown (including **tables**, **images**, **n
 
   def wiki_params
     render :edit if params['edit']
+    params[:wiki][:name] = params[:wiki][:name].titleize
     params.require(:wiki).permit(:name, :body)
   end
 

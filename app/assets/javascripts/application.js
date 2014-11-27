@@ -15,7 +15,7 @@
 
 //= require bootstrap
 //= require local_time
-//= require_tree .
+//= require_tree
 //= require_tree ../../../vendor/assets/javascripts/.
 
 //function addBlueGlow() {
