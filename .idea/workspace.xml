@@ -2,8 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fee1ab-9b38-45ea-9b78-b64a5f6dc0f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20141120192413_add_account_expiration_to_users.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20141120192803_add_account_activation_to_users.rb" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-twoextended.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-twoextended.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-twoextended.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-twoextended.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-twoextended.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-twoextended.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-twoextended.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-twoextended.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-twoextended.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-twoextended.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-tworegular.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-tworegular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-tworegular.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-tworegular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-tworegular.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-tworegular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-tworegular.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-tworegular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/dotmatrix-tworegular.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dotmatrix-tworegular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bold-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bold-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-bolditalic-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-bolditalic-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-italic-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-italic-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-light-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-light-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-lightitalic-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-lightitalic-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-demo.html" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-demo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand-regular-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand-regular-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand_dash-webfont.eot" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand_dash-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand_dash-webfont.svg" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand_dash-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand_dash-webfont.ttf" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand_dash-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand_dash-webfont.woff" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand_dash-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/fonts/quicksand_dash-webfont.woff2" afterPath="$PROJECT_DIR$/app/assets/stylesheets/quicksand_dash-webfont.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/whenever.log" afterPath="$PROJECT_DIR$/whenever.log" />
     </list>
     <ignored path="p2-wiki.iws" />
@@ -281,7 +330,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,25 +344,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p2-wiki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p2-wiki" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,11 +366,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,11 +400,11 @@
       <recent name="$PROJECT_DIR$/db" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/assets/fonts" />
-      <recent name="$PROJECT_DIR$/app/views/users" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.Development: p2-wiki">
@@ -532,7 +571,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-283" y="-1106" width="1729" height="1028" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -540,7 +579,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2834008" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2834008" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21917808" sideWeight="0.5002902" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
