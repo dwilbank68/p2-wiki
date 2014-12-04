@@ -39,4 +39,8 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true  # for ActionMailer
 
   BetterErrors.editor='rubymine://open?url=file://%{file}&line=%{line}'
+
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
 end

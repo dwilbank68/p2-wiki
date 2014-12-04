@@ -83,4 +83,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'wiki-wilbanks.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp    # for Actionmailer
   config.action_mailer.perform_deliveries = true  # for ActionMailer
+
+  # added to try and get heroku to use my fonts
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
+
 end
