@@ -5,7 +5,8 @@ class CollaborationsController < ApplicationController
     if @wiki.user_id == current_user.id
       @users = User.all_except(current_user).order(:name)
       @wiki = Wiki.find(params[:wiki_id])
-      @headline_text = @wiki.name
+      @headline_text = @wiki.name.truncate(15)
+      # @headline_text2 =
     else
       redirect_to current_user, notice: "you can only edit your own wiki"
     end

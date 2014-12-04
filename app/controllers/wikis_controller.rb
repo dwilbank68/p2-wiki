@@ -30,7 +30,6 @@ class WikisController < ApplicationController
     session[:last_page] = request.env['HTTP_REFERER'] || wikis_url
     collaborator_ids = @wiki.collaborations.pluck(:user_id)
     @collaborators = User.find(collaborator_ids)
-    # @headline_text = truncate(@wiki.name, length: 18)
     @headline_text = @wiki.name.truncate(15)
   end
 

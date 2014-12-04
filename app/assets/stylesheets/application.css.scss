@@ -154,12 +154,29 @@ body {
 
 .dot-matrix-reg { font-family: DotMatrixRegular; }
 
-#all, #back, #headline, #headline-right {
+#all, #back, {
   font-size: 3.0em;
   vertical-align: middle;
 }
 
-#headline-right { font-size: 2em; }
+#headline, #headline-right {
+  display: inline-block;
+  font-size: 2em;
+  margin-top: 10px
+}
+
+#headline {
+  font-size: 2.5em;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 456px) {
+  #headline {
+    font-size: 2em;
+    margin-top: 10px;
+  }
+
+}
 
 .nav-icons {  position:relative;  }
 
@@ -167,7 +184,9 @@ body {
 
 #back { left: 18px; }
 
-#headline { margin-left: 35px; }
+#headline {
+  margin-left: 35px;
+}
 
 #headline-right { margin-right: 10px;}
 
