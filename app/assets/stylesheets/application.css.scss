@@ -5,6 +5,13 @@ $navbar-default-color: white;
 @import "signin";
 @import "../fonts/font";
 
+// removes bootstrap's blue glow from input areas upon focus
+input[type="text"], textarea, input.btn {
+  outline: none;
+  box-shadow:none !important;
+//border:1px solid #ccc !important;
+}
+
 html {
   height: 100%;
 }
@@ -17,7 +24,7 @@ body {
         background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
 }
 
-
+li { list-style-type: none }
 
 .quicksand, nav, .collaborator, .name-box, #wiki-frame, .list-group {
   font-family: 'quicksandregular';
@@ -28,7 +35,7 @@ body {
   text-decoration: none;
 }
 
-.container, .bordered, #wiki_name, .list-group, input.btn, #edit, #edit_collaborators, #collab-list {
+.bordered {
   border: 5px gray double;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
@@ -37,11 +44,11 @@ body {
 
 
 .container {
-  box-shadow: 0px 0px 100px turquoise;
+  box-shadow: 0px 0px 50px turquoise;
   margin-top: 9px;
 }
 
-.dark-background, input.btn, #edit_collaborators {
+.dark-background, #edit_collaborators {
   background-color: #222;
 }
 
@@ -50,6 +57,8 @@ body {
   data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2M0Njb+z0AEYBxkCgUFBRnev3+P4vLB5kZswUq0GwF2QRL7aYh8iAAAAABJRU5ErkJggg==
   ) repeat;
 }
+
+.spacer { height: 6px; }
 
 /////////////////////////// Colors and Glows ////////////////////////////////////
 
@@ -118,7 +127,12 @@ body {
 //////////////////// welcome page //////////////////////////
 
     .container {
-      background-image: url("/assets/silver2.jpg");
+      background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("/assets/silver2.jpg");
+      background-color: #cccccc;
+    }
+
+    .container-darker-metal {
+      background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)), url("/assets/silver2.jpg");
       background-color: #cccccc;
     }
 
@@ -199,9 +213,6 @@ body {
 
 h1 { margin-top: 0px; }
 
-.spacer {
-  height: 6px;
-}
 /////////////////// buttons ///////////////////////////
 
 
@@ -260,7 +271,6 @@ h1 { margin-top: 0px; }
 
 .name-box {
   font-size: 1.5em;
-  bottom-margin: -5px;
 }
 
 #preview {
@@ -275,28 +285,12 @@ h1 { margin-top: 0px; }
   margin-bottom: 10px;
 }
 
-//#collab-list {
-//  padding: 0px;
-//}
-
-//.collaborator {
-.list-group-item {
-  color: white;
-  background: #303030; /* Old browsers */
-  background: -moz-linear-gradient(top, #303030 0%, #474b51 99%, #828c95 100%, #28343b 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#303030), color-stop(99%,#474b51), color-stop(100%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #303030 0%,#474b51 99%,#828c95 100%,#28343b 100%); /* W3C */
-}
-
 #hidden-text {
   display: none;
 }
 
 div.row#button-row {
-  margin-top: 7px;
+  margin-left: 0px;
 }
 
 #edit {
