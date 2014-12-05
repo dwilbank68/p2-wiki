@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'quicksandregular';
-    src: font-url( asset-path('quicksand-regular-webfont.eot'));
-    src: font-url( asset-path('quicksand-regular-webfont.eot?#iefix')) format('embedded-opentype'),
-         font-url( asset-path('quicksand-regular-webfont.woff2')) format('woff2'),
-         font-url( asset-path('quicksand-regular-webfont.woff')) format('woff'),
-         font-url( asset-path('quicksand-regular-webfont.ttf')) format('truetype'),
-         font-url( asset-path('quicksand-regular-webfont.svg#quicksandregular')) format('svg');
+    src: font-url('quicksand-regular-webfont.eot');
+    src: font-url('quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('quicksand-regular-webfont.woff2') format('woff2'),
+         font-url('quicksand-regular-webfont.woff') format('woff'),
+         font-url('quicksand-regular-webfont.ttf') format('truetype'),
+         font-url('quicksand-regular-webfont.svg#quicksandregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -16,12 +16,12 @@
 
 @font-face {
     font-family: 'quicksandbold';
-    src: font-url( asset-path('quicksand-bold-webfont.eot'));
-    src: font-url( asset-path('quicksand-bold-webfont.eot?#iefix')) format('embedded-opentype'),
-         font-url( asset-path('quicksand-bold-webfont.woff2')) format('woff2'),
-         font-url( asset-path('quicksand-bold-webfont.woff')) format('woff'),
-         font-url( asset-path('quicksand-bold-webfont.ttf')) format('truetype'),
-         font-url( asset-path('quicksand-bold-webfont.svg#quicksandbold')) format('svg');
+    src: font-url('quicksand-bold-webfont.eot');
+    src: font-url('quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('quicksand-bold-webfont.woff2') format('woff2'),
+         font-url('quicksand-bold-webfont.woff') format('woff'),
+         font-url('quicksand-bold-webfont.ttf') format('truetype'),
+         font-url('quicksand-bold-webfont.svg#quicksandbold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -29,20 +29,20 @@
 
 @font-face {
   font-family: 'DotMatrixExtended';
-  src: font-url( asset-path('dotmatrix-twoextended.eot'));
-  src: font-url( asset-path('dotmatrix-twoextended.eot')) format('embedded-opentype'),
-  font-url( asset-path('dotmatrix-twoextended.woff2')) format('woff2'),
-  font-url( asset-path('dotmatrix-twoextended.woff')) format('woff'),
-  font-url( asset-path('dotmatrix-twoextended.ttf')) format('truetype'),
-  font-url( asset-path('dotmatrix-twoextended.svg#DotMatrixRegular')) format('svg');
+  src: font-url('dotmatrix-twoextended.eot');
+  src: font-url('dotmatrix-twoextended.eot') format('embedded-opentype'),
+  font-url('dotmatrix-twoextended.woff2') format('woff2'),
+  font-url('dotmatrix-twoextended.woff') format('woff'),
+  font-url('dotmatrix-twoextended.ttf') format('truetype'),
+  font-url('dotmatrix-twoextended.svg#DotMatrixRegular') format('svg');
 }
 
 @font-face {
   font-family: 'DotMatrixRegular';
-  src: font-url( asset-path('dotmatrix-tworegular.eot'));
-  src: font-url( asset-path('dotmatrix-tworegular.eot')) format('embedded-opentype'),
-  font-url( asset-path('dotmatrix-tworegular.woff2')) format('woff2'),
-  font-url( asset-path('dotmatrix-tworegular.woff')) format('woff'),
-  font-url( asset-path('dotmatrix-tworegular.ttf')) format('truetype'),
-  font-url( asset-path('dotmatrix-tworegular.svg#DotMatrixRegular')) format('svg');
+  src: font-url('dotmatrix-tworegular.eot');
+  src: font-url('dotmatrix-tworegular.eot') format('embedded-opentype'),
+  font-url('dotmatrix-tworegular.woff2') format('woff2'),
+  font-url('dotmatrix-tworegular.woff') format('woff'),
+  font-url('dotmatrix-tworegular.ttf') format('truetype'),
+  font-url('dotmatrix-tworegular.svg#DotMatrixRegular') format('svg');
 }
