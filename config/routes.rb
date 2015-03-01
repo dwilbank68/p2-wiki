@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:update, :show, :index]
 
   resources :wikis do
-    # resources :collaborations, only: [:index]
     resources :collaborations, only: [:index, :create]
   end
 

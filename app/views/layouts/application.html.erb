@@ -53,15 +53,13 @@
               <div id="icon-bar" class="bordered dark-background" >
 
                 <div class="row-inline pull-left">
-                  <%= link_to wikis_path, class: 'all' do %>
-
+                  <%= link_to wikis_path, class: 'all gray-to-light-text' do %>
                       <span id="all" class="nav-icons dot-matrix-ext">=</span>
-                      <!--<span class="nav-icons all row-inline equals">=</span>-->
                   <% end %>
                 </div>
 
                 <div class="row-inline pull-left">
-                  <%= link_to session[:last_page] do %>
+                  <%= link_to session[:last_page], class: 'all gray-to-light-text' do %>
                       <span id="back" class="nav-icons row-inline dot-matrix-ext">‹</span>
                   <% end %>
                 </div>
@@ -115,23 +113,6 @@
 
     <script>
         $(document).ready(function(){
-
-            $('#all').hover(  function(){
-                $('#all').addClass('glow-light-text');
-                $('#all').css({'color':'white'});
-            },  function(){
-                $('#all').removeClass('glow-light-text');
-                $('#all').css({'color':'#444'});
-            } );
-
-            $('#back').hover( function(){
-                $('#back').addClass('glow-light-text');
-                $('#back').css({'color':'white'});
-            }, function(){
-                $('#back').removeClass('glow-light-text');
-                $('#back').css({'color':'#444'});
-            } );
-
         });
     </script>
 

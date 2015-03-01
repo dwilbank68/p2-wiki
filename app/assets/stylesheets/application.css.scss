@@ -9,7 +9,6 @@ $navbar-default-color: white;
 input[type="text"], textarea, input.btn {
   outline: none;
   box-shadow:none !important;
-//border:1px solid #ccc !important;
 }
 
 html {
@@ -17,11 +16,7 @@ html {
 }
 
 body {
-//        background-color: rgb(42,39,160); /*top colour*/
-//        background-image: -webkit-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-//        background-image:    -moz-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-//        background-image:      -o-linear-gradient(top, rgb(42,39,160), rgb(32,126,87));
-        background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
+  background-image:         linear-gradient(to bottom, rgb(42,39,160), rgb(32,126,87));
 }
 
 li { list-style-type: none }
@@ -62,98 +57,110 @@ li { list-style-type: none }
 
 /////////////////////////// Colors and Glows ////////////////////////////////////
 
-            .glow-dim-text {
-              color: white;
-              text-shadow: 0 0 10px gold;
-              vertical-align: middle;
-            }
+.glow-dim-text {
+  color: white;
+  text-shadow: 0 0 10px gold;
+  vertical-align: middle;
+}
 
-            .glow-light-text {
-              color: white;
-              text-shadow: 0 0 10px orange,0 0 30px gold;
-              vertical-align: middle;
-            }
+.glow-light-text {
+  color: white;
+  text-shadow: 0 0 10px orange,0 0 30px gold;
+  vertical-align: middle;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 10px orange,0 0 30px gold, 0 0 20px orange,0 0 50px gold;
+  }
+}
 
-            a.glow-light-text:hover {
-              color: white;
-              text-decoration: none;
-              text-shadow: 0 0 10px orange,0 0 30px gold, 0 0 20px orange,0 0 50px gold;
-            }
+//            a.glow-light-text:hover {
+//              color: white;
+//              text-decoration: none;
+//              text-shadow: 0 0 10px orange,0 0 30px gold, 0 0 20px orange,0 0 50px gold;
+//            }
 
-            .glow-blue-text {
-              color: white;
-              text-shadow: 0 0 10px blue, 0 0 30px lightblue;
-            }
+.glow-blue-text {
+  color: white;
+  text-shadow: 0 0 10px blue, 0 0 30px lightblue;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 10px blue, 0 0 30px lightblue, 0 0 20px blue, 0 0 50px lightblue;
+  }
+}
 
-            .glow-blue-text:hover {
-              color: white;
-              text-decoration: none;
-              text-shadow: 0 0 10px blue, 0 0 30px lightblue, 0 0 20px blue, 0 0 50px lightblue;
-            }
+.glow-red-text {
+  color: darkred;
+}
 
-            .glow-red-text {
-              color: darkred;
-//              text-shadow: 0px 0px 5px red;
-            }
+.glow-red-text:hover {
+  color: red;
+  text-shadow: 0px 0px 10px red;
+}
 
-            .glow-red-text:hover {
-              color: red;
-              text-shadow: 0px 0px 10px red;
-            }
+.glow-green-text {
+  color: #AFA;
+  text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen;
+  &:hover {
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen, 0px 0px 20px green, 0px 0px 50px limegreen;
+  }
 
-            .glow-green-text {
-              color: #AFA;
-              text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen;
-            }
+}
 
-            .glow-green-text:hover {
-              color: #FFF;
-              text-decoration: none;
-              text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen, 0px 0px 20px green, 0px 0px 50px limegreen;
-            }
+.glow-gold-text {
+  color: #FFBE00;
+  text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow;
+  &:hover {
+    color: #FFFF00;
+    text-decoration: none;
+    text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow, 0px 0px 20px yellow, 0px 0px 50px lightyellow;
+  }
+}
 
+.gray-to-light-text {
+  color: #444;
+  vertical-align: middle;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 10px orange,0 0 30px gold, 0 0 20px orange,0 0 50px gold;
+  }
+}
 
-            .glow-gold-text {
-              color: #FFBE00;
-              text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow;
-            }
-
-            .glow-gold-text:hover {
-              color: #FFFF00;
-              text-decoration: none;
-              text-shadow: 0px 0px 10px yellow, 0px 0px 30px lightyellow, 0px 0px 20px yellow, 0px 0px 50px lightyellow;
-            }
 
 //////////////////// welcome page //////////////////////////
 
-    .container {
-      background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("/assets/silver2.jpg");
-      background-color: #cccccc;
-    }
+.container {
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("/assets/silver2.jpg");
+  background-color: #cccccc;
+}
 
-    .container-darker-metal {
-      background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)), url("/assets/silver2.jpg");
-      background-color: #cccccc;
-    }
+.container-darker-metal {
+  background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)), url("/assets/silver2.jpg");
+  background-color: #cccccc;
+}
 
-    #welcome-headline {
-      font-size: 4em;
-      margin-top: 27px;
-    }
+#welcome-headline {
+  font-size: 4em;
+  margin-top: 27px;
+}
 
-    .glyphicon { top: 5px; }
+.glyphicon { top: 5px; }
 
-    .user-info { margin-top: 9px; }
+.user-info { margin-top: 9px; }
 
-    .box {
-      border: solid 1px #AAA;
-      margin-top: 20px;
-      line-height: 250%;
-    }
+.box {
+  border: solid 1px #AAA;
+  margin-top: 20px;
+  line-height: 250%;
+}
 
-    .welcome-icons { font-size: 2.5em; }
+.welcome-icons { font-size: 2.5em; }
 
-    #plans { margin-bottom: 30px; }
+#plans { margin-bottom: 30px; }
 
 /////////////////////// icon bar ///////////////////////////
 
@@ -237,7 +244,7 @@ h1 { margin-top: 0px; }
 
 ///////////////////////// Animation Transitions /////////////////////
 
-.glow-blue-text, .glow-gold-text, .glow-green-text, .glow-light-text, .glow-red-text {
+.glow-blue-text, .glow-gold-text, .glow-green-text, .glow-light-text, .glow-red-text, .gray-to-light-text {
   transition: color .5s, box-shadow .5s, text-shadow .5s;
 }
 
