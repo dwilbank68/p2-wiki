@@ -18,7 +18,7 @@
 
       <% else %>
           <table class="table table-condensed">
-            <tr> <td class="dot-matrix-reg glow-green-text">Just $4.99 / Month</td> <td class="dot-matrix-reg text-center"><%= link_to "Click Here To Subscribe", new_charge_path, class:'glow-green-text hover-light-text' %></td> </tr>
+            <tr> <td class="dot-matrix-reg glow-green-text">Just $4.99 / Month</td> <td id="subscribe-button" class="dot-matrix-reg text-center"><%= link_to "Click Here To Subscribe", new_charge_path, class:'glow-green-text hover-light-text' %></td> </tr>
             <tr> <td class="dot-matrix-reg glow-green-text">to create Private Wikis</td>
               <td></td>
             </tr>
@@ -37,3 +37,18 @@
   </div>
 
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('#subscribe-button').on('click', function() {
+        console.log('clicked');
+    })
+  });
+
+</script>
+
+
+
+
+
+

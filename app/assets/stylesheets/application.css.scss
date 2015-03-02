@@ -13,6 +13,14 @@ input[type="text"], textarea, input.btn {
   box-shadow:none !important;
 }
 
+.alert-success {
+  background-color: transparent;
+  border: none;
+  color: #AFA;
+  text-shadow: 0px 0px 10px green, 0px 0px 30px limegreen;
+  font-family: DotMatrixRegular;
+}
+
 html {
   height: 100%;
 }

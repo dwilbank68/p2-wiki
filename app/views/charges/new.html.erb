@@ -1,6 +1,28 @@
-<%= form_tag charges_path do %>
-    <h4>Click the button!</h4>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
 
-    <%= @b %>
-    <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 well signin">
+      <%= form_tag charges_path do %>
+          <article>
+            <label class="amount">
+              <span>Amount: $5.00</span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500"></script>
+      <% end %>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
