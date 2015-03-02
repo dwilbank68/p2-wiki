@@ -11,27 +11,22 @@
     <body>
 
         <ul class='nav nav-tabs navbar-inverse'>
-          <li><%#= link_to "Bloccit", root_path %></li>
-          <li><%#= link_to "About", about_path %></li>
-          <li><%#= link_to "Topics", topics_path %></li>
-          <li><%#= link_to "Popular", posts_path %></li>
-          <li><%#= link_to "Users", users_path %></li>
 
           <div class="pull-right user-info">
             <% if current_user %>
-                <span class="glow-light-text">
-                  <%= link_to "#{(current_user.name || current_user.email)}'s Wikis", current_user, class:'glow-light-text dot-matrix-reg' %>
-                </span>
+                <span class="glow-light-text dot-matrix-reg">
+                  <%= link_to "#{(current_user.name || current_user.email)}'s Wikis #{user_status}", current_user, class:'glow-light-text' %>
+                 </span>
 
-                <% if current_user.subscribed %>
-                    <%= link_to "(Premium User)", current_user, class:'glow-light-text dot-matrix-reg' %>
-                <% else %>
-                    <%= link_to "(Free User)", new_charge_path, class:'glow-light-text dot-matrix-reg' %>
-                <% end %>
 
-                <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
+                  <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
                     <span class="glyphicon glyphicon-user glow-light-text"></span>
                 <% end %>
+
+
+                </span>
+
+
 
                 <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
                     <span class="glyphicon glyphicon-log-out glow-light-text"></span>
@@ -110,11 +105,5 @@
         </div><!--end container-->
 
     </body>
-
-    <script>
-        $(document).ready(function(){
-        });
-    </script>
-
 
 </html>

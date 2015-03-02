@@ -14,10 +14,6 @@ Rails.application.routes.draw do
     patch 'privatize', on: :member
   end
 
-  # TODO - try this latera
-  # Xander also suggested (doesn't work)
-  # put 'wikis/:id/privatize', to "Wiki#privatize"
-
   resources :profiles, only: [:show]
 
   root 'welcome#index'

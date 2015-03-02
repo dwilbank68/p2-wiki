@@ -1,48 +1,39 @@
 <div class="spacer"></div>
 <div class="row">
-
   <div class="row">
     <div class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3 dark-background bordered dot-matrix-ext text-center">
       <%= link_to 'Create New Wiki', new_wiki_path, class:'glow-light-text'  %>
     </div>
   </div>
-    <div class="spacer"></div>
-  <div class="col-sm-7 col-xs-12 ">
+  <div class="spacer"></div>
+
+  <div class="col-xs-12">
+    <div class="bordered dark-background">
+      <% if current_user.subscribed? %>
+          <table class="table table-condensed button-font glow-green-text dot-matrix-reg">
+            <tr> <td class="account-table-cells"> Acct Activated:</td> <td> <%= local_time(current_user.account_activation, '%b %e, %Y %l:%M%P %Z') %></td> </tr>
+            <tr> <td class="account-table-cells"> Acct Expires:</td>   <td> <%= local_time(current_user.account_expiration, '%b %e, %Y %l:%M%P %Z') %> </td> </tr>
+            <tr> <td class="account-table-cells" colspan="2"> Your private wikis will default to public in <%= days_remaining %> </td> </tr>
+          </table>
+
+      <% else %>
+          <table class="table table-condensed">
+            <tr> <td class="dot-matrix-reg glow-green-text">Just $4.99 / Month</td> <td class="dot-matrix-reg text-center"><%= link_to "Click Here To Subscribe", new_charge_path, class:'glow-green-text hover-light-text' %></td> </tr>
+            <tr> <td class="dot-matrix-reg glow-green-text">to create Private Wikis</td>
+              <td></td>
+            </tr>
+          </table>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-12 ">
     <div>
       <ul class="bordered dark-background">
         <%= render partial: 'wikis/wiki_special', collection: @my_wikis %>
       </ul>
     </div>
-  </div>
-
-  <div class="col-sm-5 col-xs-12">
-    <div class="bordered dark-background">
-      <% if current_user.subscribed? %>
-          <table class="table table-condensed button-font glow-green-text dot-matrix-reg">
-            <tr>
-              <td> Acct Activated:</td> <td> <%= local_time(current_user.account_activation, '%b %e, %Y %l:%M%P %Z') %></td>
-            </tr>
-            <tr>
-              <td> Acct Expires:</td>   <td> <%= local_time(current_user.account_expiration, '%b %e, %Y %l:%M%P %Z') %> </td>
-            </tr>
-            <tr>
-              <td colspan="2"> Your private wikis will default to public in <%= days_remaining %> </td>
-            </tr>
-          </table>
-
-      <% else %>
-          <table class="table table-condensed">
-            <tr>
-              <td class="dot-matrix-reg glow-green-text">Just $4.99 / Month</td> <td class="dot-matrix-reg text-center"><%= link_to "Click Here To Subscribe", new_charge_path, class:'glow-green-text hover-light-text' %></td>
-            </tr>
-            <tr>
-              <td class="dot-matrix-reg glow-green-text">to create Private Wikis</td>
-              <td></td>
-            </tr>
-          </table>
-
-
-      <% end %></div>
   </div>
 
 </div>

@@ -1,25 +1,51 @@
-<li class="dark-background">
-  <table class="table table-condensed">
-    <tr>
-      <td class="wiki-name button-font"  ><%= link_to wiki.name, wiki, class:'glow-light-text' %></td>
-      <td class="wiki-owner dot-matrix-reg glow-light-text" ><%= wiki.user.name %></td>
-      <td class="wiki-edit">
-        <% if policy(wiki).edit? %>
-            <%= link_to edit_wiki_path(wiki) do %>
-                <i class="fa fa-pencil-square-o glow-light-text"></i>
-            <% end %>
-        <% else %>
-                <i class="fa fa-pencil-square-o text-muted"></i>
-        <% end %>
-      </td>
+<!--<li class="dark-background">-->
+  <!--<table class="table table-condensed">-->
+    <!--<tr>-->
+      <!--<td class="wiki-name button-font"  ><%#= link_to wiki.name, wiki, class:'glow-light-text' %></td>-->
+      <!--<td class="wiki-owner dot-matrix-reg glow-light-text" ><%= wiki.user.name %></td>-->
+      <!--<td class="wiki-edit">-->
+        <!--<%# if policy(wiki).edit? %>-->
+            <!--<%#= link_to edit_wiki_path(wiki) do %>-->
+                <!--<i class="fa fa-pencil-square-o glow-light-text"></i>-->
+            <!--<%# end %>-->
+        <!--<%# else %>-->
+                <!--<i class="fa fa-pencil-square-o text-muted"></i>-->
+        <!--<%# end %>-->
+      <!--</td>-->
 
-      <td class="wiki-share dot-matrix-reg" >
-        <% if policy(wiki).edit? %>
-            <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id), class:'dot-matrix-reg glow-light-text' %>
-        <% else %>
-            <span class="glow-light-text"><%= wiki.collaborations.count + 1 %></span>
-        <% end %>
-      </td>
-    </tr>
-  </table>
+      <!--<td class="wiki-share dot-matrix-reg" >-->
+        <!--<%# if policy(wiki).edit? %>-->
+            <!--<%#= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id), class:'dot-matrix-reg glow-light-text' %>-->
+        <!--<%# else %>-->
+            <!--<span class="glow-light-text"><%#= wiki.collaborations.count + 1 %></span>-->
+        <!--<%# end %>-->
+      <!--</td>-->
+    <!--</tr>-->
+  <!--</table>-->
+<!--</li>-->
+
+
+<li class="dark-background">
+  <hr/>
+  <div class="row">
+    <div class="col-xs-5 col-sm-5 wiki-name button-font"  ><%= link_to wiki.name, wiki, class:'glow-light-text' %></div>
+    <div class="col-xs-5 col-sm-5 wiki-owner dot-matrix-reg glow-light-text" ><%= wiki.user.name %></div>
+    <div class="col-xs-1 col-sm-1 wiki-edit">
+      <% if policy(wiki).edit? %>
+          <%= link_to edit_wiki_path(wiki) do %>
+              <i class="fa fa-pencil-square-o glow-light-text"></i>
+          <% end %>
+      <% else %>
+          <i class="fa fa-pencil-square-o text-muted"></i>
+      <% end %>
+    </div>
+
+    <div class="hidden-xs col-sm-1 wiki-share dot-matrix-reg" >
+      <% if policy(wiki).edit? %>
+          <%= link_to wiki.collaborations.count + 1, wiki_collaborations_path(wiki.id), class:'dot-matrix-reg glow-light-text' %>
+      <% else %>
+          <span class="glow-light-text"><%= wiki.collaborations.count + 1 %></span>
+      <% end %>
+    </div>
+  </div>
 </li>

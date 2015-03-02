@@ -1,3 +1,67 @@
 // Place all the styles related to the Wikis controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+////////////////////////// Wiki Template ///////////////////////////////////////////
+
+.wiki-owner {
+  font-size: .75em;
+}
+
+.wiki-headers {
+  margin-left:  38px;
+  margin-right: 31px;
+}
+
+////////////////////////// Wiki Index Page //////////////////////////////////////
+
+#wiki-frame {
+  background: #222;
+  height: 600px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+////////////////////////// New/Edit Wiki Page //////////////////////////////////////
+
+#text-input, #preview {
+  height: 600px;
+  overflow: auto;
+}
+
+.name-box {
+  font-size: 1.5em;
+}
+
+#preview {
+  font-size: 1.25em;
+  color: white;
+}
+
+
+///////////////////////// Show Wiki Page //////////////////////////////
+
+#preview.show {
+  margin-bottom: 10px;
+}
+
+#hidden-text {
+  display: none;
+}
+
+div.row#button-row {
+  margin-left: 0px;
+}
+
+#edit {
+  width: 100px;
+}
+
+
+//////////////////////////// Collaboration Page /////////////////////////
+
+.name { width: 230px; }
+
+.email { width: 330px; }
+
+.check-box { width: 20px; }

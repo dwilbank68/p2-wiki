@@ -11,4 +11,8 @@ module ApplicationHelper
     distance_of_time_in_words(DateTime.now, current_user.account_expiration)
   end
 
+  def user_status
+    current_user.subscribed ? "(Premium User)" : "(Free User)"
+  end
+
 end
