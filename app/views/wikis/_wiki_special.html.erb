@@ -1,36 +1,3 @@
-    <!--<tr>-->
-      <!--<td class="wiki-name button-font"  ><%#= link_to wiki_special.name, wiki_special, class:'glow-light-text dot-matrix-reg' %></td>-->
-      <!--<td class="wiki-owner glow-light-text dot-matrix-reg" ><%#= wiki_special.user.name %></td>-->
-      <!--<td class="wiki-edit"  >-->
-        <!--<%# if policy(wiki_special).edit? %>-->
-            <!--<%#= link_to edit_wiki_path(wiki_special) do %>-->
-                <!--<i class="fa fa-pencil-square-o glow-light-text"></i>-->
-            <!--<%# end %>-->
-        <!--<%# else %>-->
-            <!--<i class="fa fa-pencil-square-o text-muted"></i>-->
-        <!--<%# end %>-->
-      <!--</td>-->
-
-      <!--<td class="wiki-share glow-light-text dot-matrix-reg" >-->
-        <!--<%# if policy(wiki_special).edit? %>-->
-            <!--<%#= link_to wiki_special.collaborations.count + 1, wiki_collaborations_path(wiki_special.id), class:'dot-matrix-reg glow-light-text' %>-->
-        <!--<%# else %>-->
-            <!--<span class="glow-light-text"><%#= wiki_special.collaborations.count + 1 %></span>-->
-        <!--<%# end %>-->
-      <!--</td>-->
-
-      <!--<td class="wiki-private">-->
-        <!--<%# if wiki_special.private? %>-->
-            <!--<p class="dot-matrix-reg glow-light-text">Private</p>-->
-        <!--<%# else %>-->
-            <!--<p class="dot-matrix-reg glow-dim-text">Public</p>-->
-      <!--<%# end %>-->
-      <!--</td>-->
-
-
-    <!--</tr>-->
-
-
 <li class="dark-background">
   <hr/>
   <div class="row">
