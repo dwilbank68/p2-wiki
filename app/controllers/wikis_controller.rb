@@ -15,7 +15,6 @@ class WikisController < ApplicationController
 
   def create
     current_user.wikis.create(wiki_params)
-    #TODO - uppercase the name before creating or updating wiki - easy way to do it or have to alter params hash?
     redirect_to current_user
   end
 
